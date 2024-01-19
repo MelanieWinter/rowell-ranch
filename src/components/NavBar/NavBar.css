@@ -1,0 +1,27 @@
+.NavBar {
+    display: flex;
+    justify-content: flex-start;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    gap: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+  
+  .NavBar > *:first-child {
+    margin-right: auto;
+  }
+  
+  .NavBar > a:hover {
+
+  }
+  
+  .NavBar > div > span {
+
+    font-weight: 500;
+  }
+  
+  .NavBar > div {
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+  }
