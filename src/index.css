@@ -1,152 +1,62 @@
 :root {
-  --white: hsl(0, 0%, 100%);
-  --tan-1: hsl(36, 38%, 97%);
-  --tan-2: hsl(30, 17%, 89%);
-  --tan-3: hsl(28, 23%, 85%);
-  --tan-4: hsl(31, 30%, 75%);
-  --orange: hsl(31, 100%, 48%);
-  --text-light: hsl(27, 8%, 55%);
-  --text-dark: hsl(23, 7%, 35%);
+  
+  --orange-100: hsl(30, 88%, 90%);
+  --orange-200: hsl(30, 88%, 80%);
+  --orange-300: hsl(30, 88%, 70%);
+  --orange-400: hsl(30, 88%, 60%);
+  --orange-500: hsl(30, 88%, 50%);
+  --orange-600: hsl(30, 88%, 40%);
+  --orange-700: hsl(30, 88%, 30%);
+  --orange-800: hsl(30, 88%, 20%);
+  --orange-900: hsl(30, 88%, 10%);
+
+  --grey-000: hsl(0, 0%, 100%);
+  --grey-100: hsl(0, 0%, 90%);
+  --grey-200: hsl(0, 0%, 80%);
+  --grey-300: hsl(0, 0%, 70%);
+  --grey-400: hsl(0, 0%, 60%);
+  --grey-500: hsl(0, 0%, 50%);
+  --grey-600: hsl(0, 0%, 40%);
+  --grey-700: hsl(0, 0%, 30%);
+  --grey-800: hsl(0, 0%, 20%);
+  --grey-900: hsl(0, 0%, 10%);
+  --grey-1000: hsl(0, 0%, 0%);
+
 }
 
-*, *:before, *:after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
-  padding: 2vmin;
-  height: 100vh;
+  background-color: var(--grey-1000);
+  color: var(--grey-000);
+  width: 100vw;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-#root {
-  height: 100%;
-}
-
-.align-ctr {
-  text-align: center;
-}
-
-.align-rt {
-  text-align: right;
-}
-
-.smaller {
-  font-size: smaller;
-}
-
-.flex-ctr-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-j-end {
-  justify-content: flex-end;
-}
-
-.scroll-y {
-  overflow-y: scroll;
-}
-
-.section-heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--tan-1);
-  color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  padding: .6vmin;
-  text-align: center;
-  font-size: 2vmin;
-}
-
-.form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-}
-
-p.error-message {
-  color: var(--orange);
-  text-align: center;
-}
-
-form {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
-  color: var(--text-light);
-}
-
-label {
-  font-size: 2vmin;
-  display: flex;
-  align-items: center;
-}
-
-input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
-  border-radius: .5vmin;
-  color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
-  outline: none;
-}
-
-input:focus {
-  border-color: var(--orange);
-}
-
-button, a.button {
-  margin: 1vmin;
-  padding: 1vmin;
-  color: var(--white);
-  background-color: var(--orange);
-  font-size: 2vmin;
-  font-weight: bold;
+a {
   text-decoration: none;
-  text-align: center;
-  border: .1vmin solid var(--tan-2);
-  border-radius: .5vmin;
-  outline: none;
+  color: var(--grey-000);
   cursor: pointer;
 }
 
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
+a:hover {
+  color: var(--orange-500);
 }
 
-button.btn-xs {
-  font-size: 1vmin;
-  padding: .4vmin .5vmin;
+button {
+  color: var(--grey-000);
+  background-color: var(--orange-500);
+  border: none;
+  cursor: pointer;
 }
 
-button:disabled, form:invalid button[type="submit"] {
-  cursor: not-allowed;
-  background-color: var(--tan-4);
-}
-
-button[type="submit"] {
-  grid-column: span 2;
-  margin: 1vmin 0 0;
+button:hover {
+  background-color: var(--orange-600);
 }

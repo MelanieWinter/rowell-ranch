@@ -1,3 +1,3 @@
-# MERN-Stack Infrastructure
+# Rowell Ranch Rodeo
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.# mern-infrastructure
+Website made for Rowell Ranch Rodeo in development... thank you for your patience.

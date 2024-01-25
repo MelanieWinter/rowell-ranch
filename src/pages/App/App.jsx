@@ -12,19 +12,14 @@ function App() {
 
   return (
     <main className="App">
-      { user ? 
-      <>
-        <NavBar user={user} setUser={setUser} />
-        <Routes>
-          <Route path="/orders" element={<OrderHistoryPage />} />
-          <Route path="/orders/new" element={<NewOrderPage />} />
-        </Routes>
-      </>
-        :
-        <AuthPage setUser={setUser}/>
-      }
+      <NavBar user={user} setUser={setUser} />
+      <Routes>
+        <Route path="/orders" element={<OrderHistoryPage />} />
+        <Route path="/orders/new" element={<NewOrderPage />} />
+      </Routes>
     </main>
   );
 }
 
 export default App;
+{/* <AuthPage setUser={setUser}/> */}

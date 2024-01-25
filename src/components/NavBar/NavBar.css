@@ -1,27 +1,30 @@
 .NavBar {
-    display: flex;
-    justify-content: flex-start;
-    padding-inline: 2rem;
-    padding-block: 1rem;
-    gap: 2.5rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-  }
+  display: flex;
+  justify-content: flex-start;
+  padding-inline: 4rem;
+  padding-block: 2rem;
+  gap: 2.5rem;
+}
   
-  .NavBar > *:first-child {
-    margin-right: auto;
-  }
-  
-  .NavBar > a:hover {
+.NavBar > *:last-child {
+  margin-left: auto;
+}
 
-  }
-  
-  .NavBar > div > span {
+.NavBar > .logo {
+  margin-top: -1rem;
+  margin-right: 2rem;
+  width: 6rem;
+  height: 6rem;
+}
 
-    font-weight: 500;
-  }
-  
-  .NavBar > div {
-    letter-spacing: 0.1rem;
-    font-weight: 400;
-  }
+.NavBar > a,
+.NavBar > button {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.NavBar > button {
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+  padding-inline: 1rem;
+}

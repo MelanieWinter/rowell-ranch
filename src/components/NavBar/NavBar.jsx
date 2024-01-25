@@ -10,11 +10,18 @@ export default function NavBar({ user, setUser }) {
 
     return (
         <nav className='NavBar'>
-            <span>Welcome, {user.name}!</span>
-            <Link to="/orders">Order History</Link>
-            {/* &nbsp; | &nbsp; */}
-            <Link to="/orders/new">New Order</Link>
-            <Link to="#" onClick={handleLogOut}>Log Out</Link>
+            <img src="./assets/logo.png" alt="" className='logo' />
+            <Link to="#">EVENTS</Link>
+            <Link to="#">GET INVOLVED</Link>
+            <Link to="#">ABOUT US</Link>
+            <Link to="#">SPONSORS</Link>
+            <button>BUY TICKETS</button>
+            {user && (
+                <Link to="#" onClick={handleLogOut}>
+                    Log Out
+                </Link>
+            )}
+
         </nav>
     )
 }
