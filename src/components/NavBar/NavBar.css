@@ -2,8 +2,10 @@
   display: flex;
   justify-content: flex-start;
   padding-inline: 4rem;
-  padding-block: 2rem;
+  padding-block: 1rem;
   gap: 2.5rem;
+  position: relative;
+  z-index: 9999;
 }
   
 .NavBar > *:last-child {
@@ -11,7 +13,7 @@
 }
 
 .NavBar > .logo {
-  margin-top: -1rem;
+  margin-top: -.5rem;
   margin-right: 2rem;
   width: 6rem;
   height: 6rem;
@@ -21,10 +23,12 @@
 .NavBar > button {
   font-weight: 700;
   font-size: 14px;
+  text-shadow: var(--shadow)
 }
 
 .NavBar > button {
   margin-top: -1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  margin-right: 2rem;
   padding-inline: 1rem;
 }
