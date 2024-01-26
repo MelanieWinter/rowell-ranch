@@ -2,3 +2,19 @@
   position: relative;
 }
 
+.App .foreground-1 {
+  position: relative;
+  z-index: 99999;
+  margin-inline: auto;
+  width: 80%;
+  height: 22rem;
+  background: linear-gradient(to bottom, hsla(0, 0%, 19%, 0), hsla(0, 0%, 19%, 0.5));
+}
+
+.App .foreground-2 {
+  position: relative;
+  margin-inline: auto;
+  width: 80%;
+  height: 20rem;
+  background-color: hsla(0, 0%, 19%, 0.5);
+}

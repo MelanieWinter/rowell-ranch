@@ -1,0 +1,12 @@
+.VideoPlayer {
+    position: absolute;
+    right: 0;
+    top: -5rem;
+    z-index: 100000;
+    padding-inline: 4rem;
+}
+
+.VideoPlayer .iframe {
+    aspect-ratio: 16/9;
+    width: 30rem;
+}
