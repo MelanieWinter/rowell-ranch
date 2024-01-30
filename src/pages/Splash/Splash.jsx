@@ -4,14 +4,13 @@ import NumberCarousel from '../../components/NumberCarousel/NumberCarousel';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import Map from '../../components/Map/Map';
 import Schedule from '../../components/Schedule/Schedule';
-import Footer from '../../components/Footer/Footer';
+
 import ReadMoreButton from '../../components/ReadMoreButton/ReadMoreButton';
 import './Splash.css';
 
 export default function Splash({ user, setUser }) {
     return (
         <section className="Splash">
-            <NavBar user={user} setUser={setUser} />
             <Hero />
             <section className='foreground'>
                 <div className='a-nc'>
@@ -39,9 +38,6 @@ export default function Splash({ user, setUser }) {
                     <Schedule />
                 </div>
             </section>
-
-            {/* <AdminPortal setUser={setUser}/> */}
-            <Footer />
         </section>
     );
 }

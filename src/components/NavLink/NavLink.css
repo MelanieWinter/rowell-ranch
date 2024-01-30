@@ -8,7 +8,6 @@
     color: var(--grey-000);
     cursor: pointer;
     transition: color 200ms;
-
 }
 
 .NavLink:hover {

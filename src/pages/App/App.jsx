@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar'
+import Footer from '../../components/Footer/Footer';
 import Splash from '../Splash/Splash';
-import AuthPage from '../AuthPage/AuthPage';
+import AdminPortal from '../AdminPortal/AdminPortal';
 
 import './App.css';
 
@@ -12,11 +13,15 @@ function App() {
 
   return (
     <main className="App">
-      {user ? (
-        <Splash user={user} setUser={setUser} />
+      <NavBar user={user} setUser={setUser} />
+        {user ? (
+          <Routes>
+            <Route path="/*" element={<AdminPortal />} />
+          </Routes>
         ) : (
-        <Splash user={user} setUser={setUser} />
-      )}
+          <Splash user={user} setUser={setUser} />
+        )}
+      <Footer />
     </main>
   );
 }

@@ -43,3 +43,5 @@ export default function NavBar({ user, setUser }) {
         </nav>
     );
 }
+
+// TODO: Get it so the orange box doesn't push down other elements

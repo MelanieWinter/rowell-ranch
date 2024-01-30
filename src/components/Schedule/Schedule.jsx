@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import * as eventsAPI from '../../utilities/events-api'
+import NavLink from '../NavLink/NavLink';
 import './Schedule.css'
 
 export default function Schedule() {
@@ -22,14 +23,13 @@ export default function Schedule() {
             <div className='sched-h2-line'></div>
             <ul className='event-list'>
                 {visibleEvents.map((event) => (
-                    <a key={event._id} href="#" className='ei-a'>
+                    <NavLink key={event._id} to="#" content={
                         <li key={event._id} className='event-item'>
                             <div className='ei-date'>{new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'numeric' })}</div>
                             <div className='ei-title'>{event.title}</div>
                             <div className='ei-description'>{event.description}</div>
-                            {/* <div>Price: {event.price === 0 ? 'Free Admission' : `${event.price}`} </div> */}
                         </li>
-                    </a>
+                    } />
                 ))}
             </ul>
             {showAllEvents ? (
@@ -43,6 +43,24 @@ export default function Schedule() {
                     </button>
                 )
             )}
+
+            <div>
+                <form action="">
+                    <label htmlFor="">Title</label>
+                    <input type="text" />
+                    <label htmlFor="">Date</label>
+                    <input type="text" />
+                    <label htmlFor="">Price</label>
+                    <input type="text" />
+                    <label htmlFor="">Description</label>
+                    <input type="text" />
+                    <label htmlFor="">Is this a recurring event?</label>
+                    <input type="checkbox" />
+                </form>
+            </div>
+
         </section>
     );
 }
+
+// TODO: Change event schedule view to more of a table so easily see all information on first glance. Like an excel form. with delete button and a form to add new events.

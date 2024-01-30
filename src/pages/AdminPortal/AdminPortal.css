@@ -1,0 +1,8 @@
+.AdminPortal .hero-div {
+    height: 60vh;
+}
+
+.AdminPortal .event-schedule {
+    position: relative;
+    z-index: 999;
+}

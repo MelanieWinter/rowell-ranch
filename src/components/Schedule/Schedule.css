@@ -17,12 +17,14 @@
 }
 
 .Schedule .event-list {
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
 .Schedule .event-item {
+
     width: min-content;
     list-style: none;
     /* border: 1px solid var(--grey-500); */
@@ -30,7 +32,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
-    /* padding-inline: .5rem; */
+
     padding-block: .5rem;
     font-size: .95rem;
     transition: width 1500ms ease-out, color 600ms linear;

@@ -3,7 +3,7 @@ import './NavLink.css'
 
 export default function NavLink({ to, content, onClick }) {
     return (
-        <Link to="{to}" className='NavLink' onClick={onClick}>
+        <Link to={to} className='NavLink' onClick={onClick}>
             {content}
         </Link>
     )
