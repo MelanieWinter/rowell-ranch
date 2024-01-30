@@ -1,0 +1,26 @@
+.NavLink {
+    font-weight: 700;
+    font-size: 14px;
+    text-shadow: var(--shadow);
+    min-width: max-content;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--grey-000);
+    cursor: pointer;
+    transition: color 200ms;
+
+}
+
+.NavLink:hover {
+    color: var(--orange-500);
+    transition: color 200ms;
+}
+
+/* 
+.NavBar > a,
+.NavBar .log-in {
+  font-weight: 700;
+  font-size: 14px;
+  text-shadow: var(--shadow);
+  min-width: max-content;
+} */

@@ -1,0 +1,22 @@
+.LogOut .lo-1 {
+    border: 1px solid blue;
+    height: 3rem;
+    width: 10rem;
+    display: grid;
+    place-items: center;
+}
+
+.LogOut .lo-2 {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 0rem;
+    overflow: hidden;
+    transition: height 400ms ease-out;
+}
+
+.log-out:hover .lo-2 {
+    height: 4rem;
+    transition: height 800ms ease-out;
+}

@@ -1,3 +1,5 @@
+/* add dark class to text elements */
+
 .Hero {    
     background-image: url('../../../public/assets/splash-hero.jpeg');
     background-position: center;
@@ -71,3 +73,22 @@
     color: var(--grey-100);
     text-shadow: var(--shadow)
 }
+
+/* .Hero .scroll-down {
+    position: absolute;
+    z-index: 9999;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100px;
+    font-size: 1.5rem;
+    bottom: 3rem;
+    right: 2rem;
+    background-color: transparent;
+    border: 1px solid var(--orange-700);
+    color: var(--orange-700);
+}
+
+.Hero .scroll-down:hover {
+    border: 1px solid var(--orange-400);
+    color: var(--orange-400);
+} */

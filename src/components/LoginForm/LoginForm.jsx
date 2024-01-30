@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import './LoginForm.css'
+import { Link } from 'react-router-dom';
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ setUser, isActive, setIsActive, handleToggleForm }) {
     const [credentials, setCredentials] = useState({
         email: '',
         password: ''
@@ -16,28 +18,31 @@ export default function LoginForm({ setUser }) {
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-        // The promise returned by the signUp service method 
-        // will resolve to the user object included in the
-        // payload of the JSON Web Token (JWT)
-        const user = await usersService.login(credentials);
-        setUser(user);
+            const user = await usersService.login(credentials);
+            setUser(user);
+            setIsActive(false);
         } catch {
-        setError('Log In Failed - Try Again');
+            setError('Log In Failed - Try Again');
         }
     }
 
     return (
-        <div>
-        <div className="form-container">
-            <form autoComplete="off" onSubmit={handleSubmit}>
-            <label>Email</label>
-            <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-            <label>Password</label>
-            <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-            <button type="submit">LOG IN</button>
-            </form>
-        </div>
-        <p className="error-message">&nbsp;{error}</p>
-        </div>
+        <section>
+            <div className="LoginForm">
+                <h3>Log In</h3>
+                <form autoComplete="off" onSubmit={handleSubmit}>
+                    <label>Email</label>
+                    <input type="text" name="email" value={credentials.email} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+                    <label>Password</label>
+                    <input type="password" name="password" value={credentials.password} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+                    <button type="submit">LOG IN</button>
+                    <p>
+                        Don't have an account?<br />Click here to 
+                        <Link to="#" onClick={handleToggleForm}>Sign-Up</Link>
+                    </p>
+                    <p className="error-message">&nbsp;{error}</p>
+                </form>
+            </div>
+        </section>
     );
 }

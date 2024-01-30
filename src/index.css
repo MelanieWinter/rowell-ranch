@@ -1,5 +1,5 @@
 :root {
-  --shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
   
   --orange-100: hsl(20, 88%, 90%);
   --orange-200: hsl(20, 88%, 80%);
@@ -40,23 +40,5 @@ body {
   width: 100%;
 }
 
-a {
-  text-decoration: none;
-  color: var(--grey-000);
-  cursor: pointer;
-}
 
-a:hover {
-  color: var(--orange-500);
-}
 
-button {
-  color: var(--grey-000);
-  background-color: var(--orange-500);
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--orange-600);
-}

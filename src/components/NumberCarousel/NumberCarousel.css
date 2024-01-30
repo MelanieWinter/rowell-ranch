@@ -1,12 +1,12 @@
 /* fix gap so numbers don't run into text on small screens */
+/* make hover and focus stuff for read more and numbers */
+/* add dark class to carousel content elements */
 
 .NumberCarousel {
     margin: 0 auto;
     width: 100%;
+    height: 28rem;
     padding-inline: 4rem;
-    position: relative;
-    z-index: 9999;
-    margin-top: 26rem;
     display: flex;
     justify-content: space-between;
     align-items: center;    
@@ -15,7 +15,7 @@
 .NumberCarousel .carousel-content {
     min-width: 25rem;
     max-width: 25rem;
-    height: 15rem;
+    height: max-content;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -25,7 +25,7 @@
 .NumberCarousel .carousel-content > h2 {
     font-size: 2.1rem;
     font-weight: 700;
-    text-shadow: var(--text-shadow);
+    text-shadow: var(--shadow);
 }
 
 .NumberCarousel .carousel-content > .p {
@@ -33,19 +33,19 @@
     max-width: 95%;
     text-wrap: pretty;
     font-size: 1rem;
-    color: var(--grey-200);
-    text-shadow: var(--text-shadow);
+    color: var(--grey-400);
+    text-shadow: var(--shadow);
 }
 
-.NumberCarousel .read-more-link > a {
+/* .NumberCarousel .read-more-link > .nc-a {
     font-weight: 700;
     color: var(--grey-000);
     position: relative;
     z-index: 200;
-    text-shadow: var(--text-shadow);
+    text-shadow: var(--shadow);
 }
 
-.NumberCarousel .read-more-link > a::after {
+.NumberCarousel .read-more-link > .nc-a::after {
     content: '';
     border-bottom: 3px solid var(--orange-500);
     position: absolute;
@@ -53,8 +53,8 @@
     left: 3rem; 
     width: 5rem;
     z-index: -100;
-    text-shadow: var(--text-shadow);
-}
+    text-shadow: var(--shadow);
+} */
 
 .NumberCarousel ul {
     transform: rotate(-90deg);
@@ -73,7 +73,7 @@
     display: inline-block;
     font-weight: 600;
     cursor: pointer;
-    text-shadow: var(--text-shadow);
+    text-shadow: var(--shadow);
     transition: scale 600ms, color 600ms, margin 600ms;
 }
 
@@ -83,3 +83,22 @@
     margin-inline: 1.5rem;
     transition: scale 600ms, color 600ms, margin 600ms;
 }
+
+/* .NumberCarousel .scroll-down {
+    position: absolute;
+    z-index: 9999;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100px;
+    font-size: 1.5rem;
+    bottom: 3rem;
+    right: -4.58rem;
+    background-color: transparent;
+    border: 1px solid var(--orange-700);
+    color: var(--orange-700);
+}
+
+.NumberCarousel .scroll-down:hover {
+    border: 1px solid var(--orange-400);
+    color: var(--orange-400);
+} */
