@@ -1,22 +1,26 @@
 import './Hero.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-export default function Hero() {
+export default function Hero({ title, orangeIcon, orange, white, backgroundImage }) {
+    const style = {
+        backgroundImage: `url(${backgroundImage})`
+    };
+
     return (
-        <main className='Hero' id='Hero'>
-            <div>
-                <h1>WELCOME RODEO FANS</h1> 
-                <div className='spans'>
-                    <span className='orange-span'>
-                        <FontAwesomeIcon icon={faLocationDot} /> Rowell Ranch Rodeo
-                    </span>
-                    <span className='white-span'>
-                    9725 Dublin Canyon Rd, Castro Valley, CA 94552
-                    </span>
+        <section className='Hero' id='Hero'>
+            <div className='hero-div' style={style}>
+                <div className='hero-div2'>
+                    <h1>{title}</h1> 
+                    <div className='spans'>
+                        <span className='orange-span'>
+                            {orangeIcon} {orange}
+                        </span>
+                        <span className='white-span'>
+                            {white}
+                        </span>
+                    </div>
                 </div>
             </div>
-        </main>
+        </section>
     );
 }
 

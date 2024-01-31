@@ -4,14 +4,21 @@ import NumberCarousel from '../../components/NumberCarousel/NumberCarousel';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import Map from '../../components/Map/Map';
 import Schedule from '../../components/Schedule/Schedule';
-
 import ReadMoreButton from '../../components/ReadMoreButton/ReadMoreButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import './Splash.css';
 
-export default function Splash({ user, setUser }) {
+export default function Splash({ user, setUser, scheduledEvents }) {
     return (
         <section className="Splash">
-            <Hero />
+            <Hero
+            title='Welcome Rodeo Fans'
+            orangeIcon={<FontAwesomeIcon icon={faLocationDot} />}
+            orange='Rowell Ranch Rodeo'
+            white='9725 Dublin Canyon Rd, Castro Valley, CA 94552'
+            backgroundImage={'./assets/splash-hero.jpeg'}
+            />
             <section className='foreground'>
                 <div className='a-nc'>
                     <NumberCarousel />
@@ -35,7 +42,7 @@ export default function Splash({ user, setUser }) {
                     </div>
                 </div>
                 <div className='a-events'>
-                    <Schedule />
+                    <Schedule scheduledEvents={scheduledEvents} />
                 </div>
             </section>
         </section>

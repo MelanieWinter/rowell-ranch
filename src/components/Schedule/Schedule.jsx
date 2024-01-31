@@ -3,18 +3,8 @@ import * as eventsAPI from '../../utilities/events-api'
 import NavLink from '../NavLink/NavLink';
 import './Schedule.css'
 
-export default function Schedule() {
-    const [scheduledEvents, setScheduledEvents] = useState([]);
+export default function Schedule({ scheduledEvents }) {
     const [showAllEvents, setShowAllEvents] = useState(false);
-
-    useEffect(function () {
-        async function getScheduledEvents() {
-            const events = await eventsAPI.getAllEvents();
-            setScheduledEvents(events);
-        }
-        getScheduledEvents();
-    }, []);
-
     const visibleEvents = showAllEvents ? scheduledEvents : scheduledEvents.slice(0, 6);
 
     return (
@@ -44,7 +34,7 @@ export default function Schedule() {
                 )
             )}
 
-            <div>
+            {/* <div>
                 <form action="">
                     <label htmlFor="">Title</label>
                     <input type="text" />
@@ -57,7 +47,7 @@ export default function Schedule() {
                     <label htmlFor="">Is this a recurring event?</label>
                     <input type="checkbox" />
                 </form>
-            </div>
+            </div> */}
 
         </section>
     );

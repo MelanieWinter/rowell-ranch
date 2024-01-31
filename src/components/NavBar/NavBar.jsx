@@ -16,7 +16,7 @@ export default function NavBar({ user, setUser }) {
 
     return (
         <nav className='NavBar'>
-            <Logo size='logo-md' />
+            <NavLink to="/" content=<Logo size='logo-md' /> />
             <NavLink to="#" content="Events" />
             <NavLink to="#" content="Get Involved" />
             <NavLink to="#" content="About Us" />
@@ -30,11 +30,11 @@ export default function NavBar({ user, setUser }) {
                     <>
                         {isLoginActive ? (
                             <>
-                                <LoginForm className='login-component' isActive={true} setIsActive={setIsActive} handleToggleForm={handleToggleForm} />
+                                <LoginForm className='login-component' isActive={true} setIsActive={setIsActive} handleToggleForm={handleToggleForm} setUser={setUser} />
                             </>
                         ) : (
                             <>
-                                <SignUpForm className='login-component' isActive={true} setIsActive={setIsActive} handleToggleForm={handleToggleForm} />
+                                <SignUpForm className='login-component' isActive={true} setIsActive={setIsActive} handleToggleForm={handleToggleForm} setUser={setUser} />
                             </>
                         )}
                     </>

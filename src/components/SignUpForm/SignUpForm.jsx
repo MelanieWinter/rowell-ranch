@@ -53,7 +53,13 @@ export default function SignUpForm({ setUser, isActive, setIsActive, handleToggl
                     <input type="password" name="password" value={formData.password} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
                     <label>Confirm</label>
                     <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+
+                    <label>Is this an admin account?</label>
+                    <input type="checkbox" name="admin" />
+
+                    
                     <button type="submit" disabled={disable}>SIGN UP</button>
+
                     <p>
                         Already have an account?<br />Click here to 
                         <Link to="#" onClick={handleToggleForm}>LogIn</Link>

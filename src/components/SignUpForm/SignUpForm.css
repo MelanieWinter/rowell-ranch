@@ -9,6 +9,6 @@
 
 .log-in:hover .SignUpForm > form,
 .log-in.active .SignUpForm > form {
-    height: 20rem;
+    height: 25rem;
     transition: height 1000ms ease-out;
 }

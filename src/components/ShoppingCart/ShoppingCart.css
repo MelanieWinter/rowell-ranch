@@ -1,0 +1,6 @@
+.ShoppingCart {
+    position: relative;
+    z-index: 9999;
+    height: 50rem;
+    border: 1px solid lime;
+}
