@@ -1,8 +1,6 @@
-import { useEffect } from 'react'
 import './ShoppingCart.css';
 import LineItem from '../LineItem/LineItem';
 import * as stripeApi from '../../utilities/stripe.api'
-import { faHourglass1 } from '@fortawesome/free-solid-svg-icons';
 
 export default function ShoppingCart({ order, handleChangeQty, handleCheckout }) {
 
@@ -47,7 +45,7 @@ export default function ShoppingCart({ order, handleChangeQty, handleCheckout })
                     </section>
                 </>
                 :
-                <div className="hungry">Hungry?</div>
+                <div className="hungry">HOWDY</div>
                 }
             </div>
         </div>

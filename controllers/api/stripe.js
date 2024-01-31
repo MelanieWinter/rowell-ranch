@@ -25,6 +25,8 @@ async function createPrices(lineItems) {
 
 async function createCheckoutSession(req, res) {
     const cart = await Order.getCart(req.user._id);
+    cart.isPaid = true;
+    await cart.save();
     try {
         const lineItems = await createPrices(cart.lineItems);
         const session = await stripe.checkout.sessions.create({
@@ -33,7 +35,7 @@ async function createCheckoutSession(req, res) {
             success_url: `${process.env.SERVER_URL}/success`,
             cancel_url: `${process.env.SERVER_URL}/cancel`
         })
-        res.json({ url: session.url })
+        res.json({ url: session.url, cart })
     } catch (err) {
         console.log('ERROR OBJECT', err)
         res.status(500).json({ error: err.message})

@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom'
 import * as userService from '../../utilities/users-service'
 import NavLink from '../NavLink/NavLink'
+import Logo from '../Logo/Logo'
 import './Footer.css'
 
 export default function Footer({ user, setUser }) {
-    // function handleLogOut() {
-    //     userService.logOut()
-    //     setUser()
-    // }
-
     return (
         <footer className='Footer'>
-            <img src="./assets/logo.png" alt="" className='logo' />
+            <NavLink to="/" content=<Logo size='logo-sm' /> />
             <NavLink to="#" content="Events" />
             <NavLink to="#" content="Get Involved" />
             <NavLink to="#" content="About Us" />
