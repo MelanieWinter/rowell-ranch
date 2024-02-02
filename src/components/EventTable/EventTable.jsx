@@ -9,6 +9,13 @@ export default function EventTable({ scheduledEvents, setScheduledEvents }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [editMode, setEditMode] = useState(false);
     const [editedEvent, setEditedEvent] = useState(null);
+    const [newFormData, setNewFormData] = useState({
+        date: '',
+        title: '',
+        description: '',
+        price: '',
+        recurring: false,
+    });
     const [formData, setFormData] = useState({
         date: '',
         title: '',
@@ -17,7 +24,6 @@ export default function EventTable({ scheduledEvents, setScheduledEvents }) {
         recurring: false,
     });
     const [isGridView, setGridView] = useState(true);
-
     const filteredEvents = scheduledEvents.filter((event) => {
         const formattedDate = new Date(event.date).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' });
         return (
@@ -38,18 +44,12 @@ export default function EventTable({ scheduledEvents, setScheduledEvents }) {
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
                 </label>
-                {editMode ? (
                     <EventForm
                         scheduledEvents={scheduledEvents}
                         setScheduledEvents={setScheduledEvents}
-                        editedEvent={editedEvent}
-                        setEditedEvent={setEditedEvent}
-                        onCancelEdit={() => setEditMode(false)}
-                        formData={formData}
-                        setFormData={setFormData}
-                        isGridView={isGridView}
+                        newFormData={newFormData}
+                        setNewFormData={setNewFormData}
                     />
-                ) : null}
                 <button onClick={() => setGridView(!isGridView)}>
                     {isGridView ? 'Switch to Calendar View' : 'Switch to Grid View'}
                 </button>

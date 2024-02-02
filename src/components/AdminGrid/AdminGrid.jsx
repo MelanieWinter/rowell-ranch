@@ -5,6 +5,7 @@ import formatCurrency from '../../utilities/formatCurrency'
 import './AdminGrid.css'
 
 export default function AdminGrid({ filteredEvents, editMode, setEditMode, editedEvent, setEditedEvent, scheduledEvents, setScheduledEvents, formData, setFormData }) {
+    
     const handleDeleteEvent = async (eventId) => {
         try {
             await eventsAPI.deleteEvent(eventId);
@@ -17,22 +18,36 @@ export default function AdminGrid({ filteredEvents, editMode, setEditMode, edite
 
     const handleEditEvent = (event) => {
         setEditedEvent(event);
-        console.log(event)
-        console.log(new Date(event.date).toISOString().split('T')[0])
-        console.log(event.title)
-        console.log(event.description)
-        console.log(event.price)
-        console.log(event.recurring)
-        setFormData({
-            date: new Date(event.date).toISOString().split('T')[0],
-            title: event.title,
-            description: event.description,
-            price: event.price,
-            recurring: event.recurring,
-        });
+        // setFormData({
+        //     date: new Date(editedEvent.date).toISOString().split('T')[0],
+        //     title: editedEvent.title,
+        //     description: editedEvent.description,
+        //     price: editedEvent.price,
+        //     recurring: editedEvent.recurring,
+        // });
         setEditMode(true);
-        console.log(formData)
     };
+    
+    // useEffect(() => {
+    //     console.log('EDITED EVENT', editedEvent);
+    //     if (editedEvent) {
+    //         setFormData({
+    //             date: new Date(editedEvent.date).toISOString().split('T')[0],
+    //             title: editedEvent.title,
+    //             description: editedEvent.description,
+    //             price: editedEvent.price,
+    //             recurring: editedEvent.recurring,
+    //         });
+    //     } else {
+    //         setFormData({
+    //             date: '',
+    //             title: '',
+    //             description: '',
+    //             price: '',
+    //             recurring: false,
+    //         });
+    //     }
+    // }, [editedEvent]);
 
     const handleCancelEdit = () => {
         setEditMode(false);
@@ -44,13 +59,15 @@ export default function AdminGrid({ filteredEvents, editMode, setEditMode, edite
             {filteredEvents.map((event) => (
                 <div className="grid-item" key={event._id}>
                     {editMode && editedEvent?._id === event._id ? (
-                        <EventForm
-                            scheduledEvents={scheduledEvents}
-                            setScheduledEvents={setScheduledEvents}
-                            editedEvent={editedEvent}
-                            setEditedEvent={setEditedEvent}
-                            onCancelEdit={handleCancelEdit}
-                        />
+                    <EventForm
+                        scheduledEvents={scheduledEvents}
+                        setScheduledEvents={setScheduledEvents}
+                        editedEvent={editedEvent}
+                        setEditedEvent={setEditedEvent}
+                        onCancelEdit={() => setEditMode(false)}
+                        formData={formData}
+                        setFormData={setFormData}
+                    />
                     ) : (
                         <>
                             <div>Date: {new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'numeric' })}</div>
