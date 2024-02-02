@@ -7,6 +7,7 @@ export function handleCheckoutButton(lineItems) {
             window.location = url;
         })
         .catch(error => {
+            console.log(error)
             console.error('Checkout error:', error.message);
         });
 }
