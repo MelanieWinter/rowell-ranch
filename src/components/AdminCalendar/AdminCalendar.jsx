@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './AdminCalendar.css'
 
-export default function AdminCalendar({ scheduledEvents, setEditedEvent, setEditMode, setFormData }) {
+export default function AdminCalendar({ filteredEvents, editMode, setEditMode, editedEvent, setEditedEvent, scheduledEvents, setScheduledEvents, formData, setFormData, setNewFormData, newEvent, setNewEvent}) {
     const [currentDate, setCurrentDate] = useState(new Date());
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [clickedDate, setClickedDate] = useState(null);
@@ -12,7 +12,6 @@ export default function AdminCalendar({ scheduledEvents, setEditedEvent, setEdit
         const firstDay = new Date(year, month, 1);
         const startDay = firstDay.getDay();
         const totalDays = daysInMonth(year, month);
-    
         const monthData = [];
     
         let dayCounter = 1;
@@ -29,7 +28,6 @@ export default function AdminCalendar({ scheduledEvents, setEditedEvent, setEdit
             }
             monthData.push(week);
         }
-    
         return monthData;
     };
 
@@ -42,47 +40,58 @@ export default function AdminCalendar({ scheduledEvents, setEditedEvent, setEdit
     };
 
     const handleClickEvent = (event) => {
-        const eventDate = new Date(event.date);
-        setSelectedEvent({ ...event, date: eventDate });
+        setSelectedEvent(event);
+    
+        if (event) {
+            console.log(event);
+            setEditedEvent(event);
+            setFormData({
+                date: new Date(event.date).toISOString().split('T')[0],
+                title: event.title,
+                description: event.description,
+                price: event.price,
+                recurring: event.recurring,
+            });
+            setEditMode(true);
+        } else {
+            console.log('DATE', clickedDate)
+            handleNewEvent(clickedDate);
+        }
     };
+    
 
     const monthData = getMonthData(currentDate.getFullYear(), currentDate.getMonth());
 
     const handleNewEvent = (selectedDate) => {
         setEditedEvent(null);
-        setFormData({
+        setNewEvent(selectedDate);
+        setNewFormData({
             date: selectedDate.toISOString().split('T')[0],
             title: '',
             description: '',
             price: '',
             recurring: false,
         });
-        setEditMode(true);
+        setEditMode(false);
     };
 
-    const handleEditEvent = (event) => {
-        setEditedEvent(event);
-        setFormData({
-            date: new Date(event.date).toISOString().split('T')[0],
-            title: event.title,
-            description: event.description,
-            price: event.price,
-            recurring: event.recurring,
-        });
-        setEditMode(true);
-    };
+    // const handleEditEvent = (event) => {
+    //     setEditedEvent(event);
+    //     setFormData({
+    //         date: new Date(event.date).toISOString().split('T')[0],
+    //         title: event.title,
+    //         description: event.description,
+    //         price: event.price,
+    //         recurring: event.recurring,
+    //     });
+    //     setEditMode(true);
+    // };
 
-    const handleSelectEvent = (selectedEvent) => {
-        setEditedEvent(selectedEvent);
-        setFormData({
-            date: new Date(selectedEvent.date).toISOString().split('T')[0],
-            title: selectedEvent.title,
-            description: selectedEvent.description,
-            price: selectedEvent.price,
-            recurring: selectedEvent.recurring,
-        });
-        setEditMode(true);
-    };
+    // const handleSelectEvent = (selectedEvent) => {
+    //     console.log(selectedEvent)
+    //     setEditedEvent(selectedEvent);
+    //     setEditMode(true);
+    // };
 
     return (
         <section className='AdminCalendar'>
@@ -116,7 +125,7 @@ export default function AdminCalendar({ scheduledEvents, setEditedEvent, setEdit
                             });
                         
                             if (existingEvent) {
-                                handleSelectEvent(existingEvent);
+                                handleClickEvent(existingEvent);
                             } else {
                                 handleNewEvent(clickedDate);
                             }
@@ -143,8 +152,8 @@ export default function AdminCalendar({ scheduledEvents, setEditedEvent, setEdit
                                             className={`ac-calevent ${selectedEvent && selectedEvent._id === filteredEvent._id ? 'selected-event' : ''}`}
                                             onClick={() => {
                                                 handleClickEvent(filteredEvent);
-                                                handleEditEvent(filteredEvent);
-                                                handleSelectEvent(filteredEvent);
+                                                // handleEditEvent(filteredEvent);
+                                                // handleSelectEvent(filteredEvent);
                                             }}
                                         >
                                             {filteredEvent.title}

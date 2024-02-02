@@ -9,6 +9,7 @@ export default function EventTable({ scheduledEvents, setScheduledEvents }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [editMode, setEditMode] = useState(false);
     const [editedEvent, setEditedEvent] = useState(null);
+    const [newEvent, setNewEvent] = useState(null);
     const [newFormData, setNewFormData] = useState({
         date: '',
         title: '',
@@ -44,12 +45,28 @@ export default function EventTable({ scheduledEvents, setScheduledEvents }) {
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
                 </label>
+                {editedEvent && !isGridView ? (
+                    <EventForm
+                        scheduledEvents={scheduledEvents}
+                        setScheduledEvents={setScheduledEvents}
+                        editedEvent={editedEvent}
+                        setEditedEvent={setEditedEvent}
+                        onCancelEdit={() => setEditedEvent(null)}
+                        formData={formData}
+                        setFormData={setFormData}
+                        editMode={editMode}
+                        setEditMode={setEditMode}
+                        newEvent={newEvent}
+                        setNewEvent={setNewEvent}
+                    />
+                ) : (
                     <EventForm
                         scheduledEvents={scheduledEvents}
                         setScheduledEvents={setScheduledEvents}
                         newFormData={newFormData}
                         setNewFormData={setNewFormData}
                     />
+                )}`
                 <button onClick={() => setGridView(!isGridView)}>
                     {isGridView ? 'Switch to Calendar View' : 'Switch to Grid View'}
                 </button>
@@ -68,10 +85,18 @@ export default function EventTable({ scheduledEvents, setScheduledEvents }) {
                 />
             ) : (
                 <AdminCalendar
-                    scheduledEvents={scheduledEvents}
-                    setEditedEvent={setEditedEvent}
+                    filteredEvents={filteredEvents}
+                    editMode={editMode}
                     setEditMode={setEditMode}
+                    editedEvent={editedEvent}
+                    setEditedEvent={setEditedEvent}
+                    scheduledEvents={scheduledEvents}
+                    setScheduledEvents={setScheduledEvents}
+                    formData={formData}
                     setFormData={setFormData}
+                    setNewFormData={setNewFormData}
+                    newEvent={newEvent}
+                    setNewEvent={setNewEvent}
                 />
             )}
         </div>

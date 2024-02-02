@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import * as eventsAPI from '../../utilities/events-api';
 import './EventForm.css';
 
-export default function EventForm({ scheduledEvents, setScheduledEvents, editedEvent, setEditedEvent, onCancelEdit, formData, setFormData, newFormData, setNewFormData }) {
+export default function EventForm({ scheduledEvents, setScheduledEvents, editedEvent, setEditedEvent, onCancelEdit, formData, setFormData, newFormData, setNewFormData, editMode, setEditMode, newEvent, setNewEvent }) {
 
     useEffect(() => {
         console.log("editedEvent in EventForm:", editedEvent);
@@ -16,6 +16,19 @@ export default function EventForm({ scheduledEvents, setScheduledEvents, editedE
             });
         }
     }, [editedEvent]);
+
+    // useEffect(() => {
+    //     console.log('NEW EVENT', newEvent);
+    //     if (newEvent) {
+    //         setNewFormData({
+    //             date: new Date(editedEvent.date).toISOString().split('T')[0],
+    //             title: editedEvent.title,
+    //             description: editedEvent.description,
+    //             price: editedEvent.price,
+    //             recurring: editedEvent.recurring,
+    //         });
+    //     }
+    // }, [newEvent]);
 
     const handleChange = (evt) => {
         const { name, value, type, checked } = evt.target;
