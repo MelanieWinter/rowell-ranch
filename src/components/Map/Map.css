@@ -2,3 +2,8 @@
     box-shadow: var(--shadow);
 }
 
+@media screen and (max-width: 1200px) {
+    .map {
+        margin-top: 2rem;
+    }
+}

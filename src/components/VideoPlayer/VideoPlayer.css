@@ -8,3 +8,9 @@
     aspect-ratio: 16/9;
     width: 100%;
 }
+
+@media screen and (max-width: 1200px) {
+    .VideoPlayer {
+        margin-top: 2rem;
+    }
+}

@@ -12,13 +12,21 @@
 .Splash .s-sec1 {
     height: 100vh;
     width: 100%;
+    min-width: 550px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 4rem;
+    margin: 4rem;
 }
+
+/* @media screen and (max-width: 680px) {
+    .Splash .s-sec1 {
+        border: 1px solid blue;
+    }
+
+} */
 
 .Splash .s-sec2 {
     background-color: var(--grey-000);
@@ -103,7 +111,6 @@
     flex-wrap: wrap;
     padding-block: 4rem;
     gap: 6rem;
-    border: 1px solid lime;
 } 
 
 @media screen and (max-width: 1200px) {
