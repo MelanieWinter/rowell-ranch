@@ -2,6 +2,6 @@
     min-height: 100vh;
     position: relative;
     z-index: 999;
-    width: clamp(70%, 80vw, 95%);
+    width: clamp(70%, 80vw, 98%);
     margin: 0 auto;
 }

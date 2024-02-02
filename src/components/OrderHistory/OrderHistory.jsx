@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as ordersAPI from "../../utilities/orders-api";
+import formatCurrency from '../../utilities/formatCurrency';
 import './OrderHistory.css'
 
 export default function OrderHistory() {
@@ -40,16 +41,16 @@ export default function OrderHistory() {
                                         {lineItem.qty}x 
                                     </span>
                                     <span>
-                                        ${lineItem.event.price}
+                                        {formatCurrency(lineItem.event.price)}
                                     </span>
                                     <span className="oh-extPrice">
-                                        ${lineItem.extPrice}
+                                        {formatCurrency(lineItem.extPrice)}
                                     </span>
                                 </p>
                             </div>
                             ))}
                         <div className="oh-total">
-                            ${order.orderTotal}
+                            {formatCurrency(order.orderTotal)}
                         </div>
                     </div>
                 </div>

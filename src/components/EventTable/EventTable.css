@@ -1,13 +1,26 @@
-.EventTable {
+/* .EventTable {
     position: relative;
     z-index: 9999;
-    padding-inline: 4rem;
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 2rem;
     min-height: 100vh;
     margin-bottom: 8rem;
-    width: 80vw;
+    width: 80%;
+    border: 1px solid lime;
+    margin: 0 auto;
+} */
+
+.EventTable {
+    position: relative;
+    z-index: 9999;
+    height: 100vh;
+    margin-bottom: 8rem;
+    /* width: clamp(70%, 80vw, 98%); */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .EventTable > aside {
@@ -25,4 +38,21 @@
 .grid-item {
     border: 1px solid #ddd;
     padding: 16px;
+}
+
+.et-aside {
+    width: 24%;
+    padding-block: 3rem;
+}
+
+.et-main {
+    width: 74%;
+}
+
+.et-search {
+    width: 100%;
+}
+
+.et-search > input {
+    width: 100%;
 }

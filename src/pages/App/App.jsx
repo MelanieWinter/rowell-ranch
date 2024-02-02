@@ -7,6 +7,10 @@ import Splash from '../Splash/Splash';
 import AdminPortal from '../AdminPortal/AdminPortal';
 import TicketStore from '../TicketStore/TicketStore';
 import UserPortal from '../UserPortal/UserPortal';
+import AboutUs from '../AboutUs/AboutUs';
+import GetInvolved from '../GetInvolved/GetInvolved';
+import Events from '../Events/Events';
+import Sponsors from '../Sponsors/Sponsors'
 import * as eventsAPI from '../../utilities/events-api'
 
 import './App.css';
@@ -43,6 +47,22 @@ function App() {
         <Route
           path="/ticket-store"
           element={!isAdmin() ? <TicketStore scheduledEvents={scheduledEvents} /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/about-us"
+          element={<AboutUs />}
+        />
+        <Route
+          path="/get-involved"
+          element={<GetInvolved />}
+        />
+        <Route
+          path="/events"
+          element={<Events />}
+        />
+        <Route
+          path="/sponsors"
+          element={<Sponsors />}
         />
         <Route 
           path="/" 

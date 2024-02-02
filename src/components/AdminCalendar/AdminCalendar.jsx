@@ -75,28 +75,10 @@ export default function AdminCalendar({ filteredEvents, editMode, setEditMode, e
         setEditMode(false);
     };
 
-    // const handleEditEvent = (event) => {
-    //     setEditedEvent(event);
-    //     setFormData({
-    //         date: new Date(event.date).toISOString().split('T')[0],
-    //         title: event.title,
-    //         description: event.description,
-    //         price: event.price,
-    //         recurring: event.recurring,
-    //     });
-    //     setEditMode(true);
-    // };
-
-    // const handleSelectEvent = (selectedEvent) => {
-    //     console.log(selectedEvent)
-    //     setEditedEvent(selectedEvent);
-    //     setEditMode(true);
-    // };
-
     return (
         <section className='AdminCalendar'>
             <div className='cal-topdiv'>
-                <h2>{currentDate.toLocaleString('en-us', { month: 'long', year: 'numeric' })}</h2>
+                <h2>{currentDate.toLocaleDateString('en-us', { month: 'long', year: 'numeric', timeZone: 'UTC' })}</h2>
                 <div className='cal-buttonsdiv'>
                     <button onClick={handlePrevMonth} className='cal-button'>Previous Month</button>
                     <button onClick={handleNextMonth} className='cal-button'>Next Month</button>
@@ -114,13 +96,13 @@ export default function AdminCalendar({ filteredEvents, editMode, setEditMode, e
                             const clickedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
                             setClickedDate(clickedDate)
                             const existingEvent = scheduledEvents.find(event => {
-                                const eventDate = new Date(event.date).getDate();
-                                const eventMonth = new Date(event.date).getMonth();
-                                const eventYear = new Date(event.date).getFullYear();
+                                const eventDate = new Date(event.date).getUTCDate();
+                                const eventMonth = new Date(event.date).getUTCMonth();
+                                const eventYear = new Date(event.date).getUTCFullYear();
                                 return (
                                     eventDate === day &&
-                                    eventMonth === currentDate.getMonth() &&
-                                    eventYear === currentDate.getFullYear()
+                                    eventMonth === currentDate.getUTCMonth() &&
+                                    eventYear === currentDate.getUTCFullYear()
                                 );
                             });
                         
@@ -137,13 +119,13 @@ export default function AdminCalendar({ filteredEvents, editMode, setEditMode, e
                             <div className="ac-events">
                                 {scheduledEvents
                                     .filter((event) => {
-                                        const eventDate = new Date(event.date).getDate();
-                                        const eventMonth = new Date(event.date).getMonth();
-                                        const eventYear = new Date(event.date).getFullYear();
+                                        const eventDate = new Date(event.date).getUTCDate();
+                                        const eventMonth = new Date(event.date).getUTCMonth();
+                                        const eventYear = new Date(event.date).getUTCFullYear();
                                         return (
                                             eventDate === day &&
-                                            eventMonth === currentDate.getMonth() &&
-                                            eventYear === currentDate.getFullYear()
+                                            eventMonth === currentDate.getUTCMonth() &&
+                                            eventYear === currentDate.getUTCFullYear()
                                         );
                                     })
                                     .map((filteredEvent) => (
@@ -151,9 +133,6 @@ export default function AdminCalendar({ filteredEvents, editMode, setEditMode, e
                                             key={filteredEvent._id}
                                             className={`ac-calevent ${selectedEvent && selectedEvent._id === filteredEvent._id ? 'selected-event' : ''}`}
                                             onClick={() => {
-                                                handleClickEvent(filteredEvent);
-                                                // handleEditEvent(filteredEvent);
-                                                // handleSelectEvent(filteredEvent);
                                             }}
                                         >
                                             {filteredEvent.title}

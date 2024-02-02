@@ -1,8 +1,4 @@
-/* Add this CSS to your stylesheets or components */
-
-/* Container for the entire calendar */
 .AdminCalendar {
-    /* border: 1px solid red; */
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -19,54 +15,46 @@
     gap: 1rem;
 }
 
-/* Style for each week */
-.week {
+.AdminCalendar .week {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 0rem;
-    /* border: 1px solid red; */
 }
 
-/* Style for each day */
-.day {
+.AdminCalendar .day {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-    width: 8rem;
-    height: 8rem;
+    width: 8.3vw;
+    min-height: 14vh;
+    height: auto; 
     position: relative;
     cursor: pointer;
 }
 
-/* Style for the date inside each day */
-.date {
+.AdminCalendar .date {
     font-weight: bold;
     position: absolute;
     top: 5px;
     left: 5px;
 }
 
-/* Style for navigation buttons */
-.cal-button {
-    /* margin: 5px; */
+.AdminCalendar .cal-button {
     cursor: pointer;
-    /* height: 3rem; */
 }
 
-.ac-calevent {
+.AdminCalendar .ac-calevent { 
     background-color: var(--orange-500);
-    font-size: .75rem;
-    margin: .25rem;
+    font-size: 0.75rem;
+    margin: 0.25rem;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-inline: .5rem;
+    padding-block: .25rem;
 }
 
-.day.selected {
-    border: 4px solid var(--orange-500);
-}
-
-
-
-.ac-calevent.selected-event {
-    /* Styles for the selected event */
-    border: 2px solid red; /* Add your styles here */
-
+.AdminCalendar .ac-calevent.selected-event {
+    border: 2px solid red; 
 }

@@ -1,7 +1,7 @@
 import './ShoppingCart.css';
 import LineItem from '../LineItem/LineItem';
 import * as stripeApi from '../../utilities/stripe.api'
-import formatCurrency from '../../utilities/formatCurrency';
+import formatCurrency from '../../utilities/formatCurrency'
 
 export default function ShoppingCart({ order, handleChangeQty, handleCheckout }) {
 

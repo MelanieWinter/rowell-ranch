@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import * as eventsAPI from '../../utilities/events-api';
 import './EventForm.css';
 
-export default function EventForm({ scheduledEvents, setScheduledEvents, editedEvent, setEditedEvent, onCancelEdit, formData, setFormData, newFormData, setNewFormData, editMode, setEditMode, newEvent, setNewEvent }) {
+export default function EventForm({ scheduledEvents, setScheduledEvents, editedEvent, setEditedEvent, onCancelEdit, formData, setFormData, newFormData, setNewFormData, editMode, setEditMode, newEvent, setNewEvent, isGridView }) {
 
     useEffect(() => {
-        console.log("editedEvent in EventForm:", editedEvent);
         if (editedEvent) {
             setFormData({
                 date: new Date(editedEvent.date).toISOString().split('T')[0],
@@ -17,22 +16,8 @@ export default function EventForm({ scheduledEvents, setScheduledEvents, editedE
         }
     }, [editedEvent]);
 
-    // useEffect(() => {
-    //     console.log('NEW EVENT', newEvent);
-    //     if (newEvent) {
-    //         setNewFormData({
-    //             date: new Date(editedEvent.date).toISOString().split('T')[0],
-    //             title: editedEvent.title,
-    //             description: editedEvent.description,
-    //             price: editedEvent.price,
-    //             recurring: editedEvent.recurring,
-    //         });
-    //     }
-    // }, [newEvent]);
-
     const handleChange = (evt) => {
         const { name, value, type, checked } = evt.target;
-        // Check if the form is for a new event or an edited event
         const formDataToUpdate = editedEvent ? setFormData : setNewFormData;
         formDataToUpdate((prevData) => ({
             ...prevData,
@@ -53,7 +38,6 @@ export default function EventForm({ scheduledEvents, setScheduledEvents, editedE
             }
             const updatedEvents = await eventsAPI.getAllEvents();
             setScheduledEvents(updatedEvents);
-            // Clear the appropriate form data state after submission
             if (editedEvent) {
                 setFormData({
                     date: '',
@@ -82,6 +66,16 @@ export default function EventForm({ scheduledEvents, setScheduledEvents, editedE
         }
     };
 
+    const handleDeleteEvent = async (eventId) => {
+        try {
+            await eventsAPI.deleteEvent(eventId);
+            const updatedEvents = await eventsAPI.getAllEvents();
+            setScheduledEvents(updatedEvents);
+        } catch (error) {
+            console.error('Error deleting event:', error);
+        }
+    };
+
     return (
         <div className='EventForm'>
             <h3>{editedEvent ? 'Edit Event' : 'Add An Event'}</h3>
@@ -99,7 +93,7 @@ export default function EventForm({ scheduledEvents, setScheduledEvents, editedE
                     <textarea name="description" value={editedEvent ? formData.description : newFormData.description} onChange={handleChange} />
                 </label>
                 <label>
-                    Price
+                    Price <span>(in pennies)</span>
                     <input type="number" name='price' value={editedEvent ? formData.price : newFormData.price} onChange={handleChange} />
                 </label>
                 <label>
@@ -107,6 +101,7 @@ export default function EventForm({ scheduledEvents, setScheduledEvents, editedE
                     <input type="checkbox" name='recurring' checked={editedEvent ? formData.recurring : newFormData.recurring} onChange={handleChange} />
                 </label>
                 <button type='submit'>{editedEvent ? 'Update' : 'Submit'}</button>
+                {editedEvent && <button onClick={() => handleDeleteEvent(editedEvent._id)}>Delete</button>}
                 {editedEvent && <button type='button' onClick={onCancelEdit}>Cancel</button>}
             </form>
         </div>

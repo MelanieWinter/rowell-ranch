@@ -18,10 +18,10 @@ export default function NavBar({ user, setUser }) {
     return (
         <nav className="NavBar">
         <NavLink to="/" content={<Logo size="logo-md" />} />
-        <NavLink to="#" content="Events" />
-        <NavLink to="#" content="Get Involved" />
-        <NavLink to="#" content="About Us" />
-        <NavLink to="#" content="Sponsors" />
+        <NavLink to="/events" content="Events" />
+        <NavLink to="/get-involved" content="Get Involved" />
+        <NavLink to="/about-us" content="About Us" />
+        <NavLink to="/sponsors" content="Sponsors" />
         <div className={user ? 'log-out' : 'log-in' + (isActive ? ' active' : '')}>
             {user ? (
             <>
