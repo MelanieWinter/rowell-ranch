@@ -1,20 +1,8 @@
-import { useState, useEffect } from 'react';
 import EventForm from '../../components/EventForm/EventForm';
-import * as eventsAPI from '../../utilities/events-api';
 import formatCurrency from '../../utilities/formatCurrency'
 import './AdminGrid.css'
 
 export default function AdminGrid({ filteredEvents, editMode, setEditMode, editedEvent, setEditedEvent, scheduledEvents, setScheduledEvents, formData, setFormData }) {
-    
-    const handleDeleteEvent = async (eventId) => {
-        try {
-            await eventsAPI.deleteEvent(eventId);
-            const updatedEvents = await eventsAPI.getAllEvents();
-            setScheduledEvents(updatedEvents);
-        } catch (error) {
-            console.error('Error deleting event:', error);
-        }
-    };
 
     const handleEditEvent = (event) => {
         setEditedEvent(event);
@@ -43,7 +31,6 @@ export default function AdminGrid({ filteredEvents, editMode, setEditMode, edite
                             <div>Price: {formatCurrency(event.price)}</div>
                             <div>Recurring: {event.recurring ? 'Yes' : 'No'}</div>
                             <button onClick={() => handleEditEvent(event)}>Edit</button>
-                            {/* <button onClick={() => handleDeleteEvent(event._id)}>Delete</button> */}
                         </>
                     )}
                 </div>

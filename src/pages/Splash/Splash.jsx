@@ -1,4 +1,3 @@
-import NavBar from '../../components/NavBar/NavBar'
 import Hero from '../../components/Hero/Hero'
 import NumberCarousel from '../../components/NumberCarousel/NumberCarousel';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
@@ -7,11 +6,12 @@ import Schedule from '../../components/Schedule/Schedule';
 import ReadMoreButton from '../../components/ReadMoreButton/ReadMoreButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import Carousel from '../../components/Carousel/Carousel';
 import './Splash.css';
 
-export default function Splash({ user, setUser, scheduledEvents }) {
+export default function Splash({ scheduledEvents }) {
     return (
-        <section className="Splash">
+        <>
             <Hero
             title='Welcome Rodeo Fans'
             orangeIcon={<FontAwesomeIcon icon={faLocationDot} />}
@@ -19,16 +19,16 @@ export default function Splash({ user, setUser, scheduledEvents }) {
             white='9725 Dublin Canyon Rd, Castro Valley, CA 94552'
             backgroundImage={'./assets/splash-hero.jpeg'}
             />
-            <section className='foreground'>
-                <div className='a-nc'>
+            <section className='Splash'>
+                <div className='s-sec1'>
                     <NumberCarousel />
                     <VideoPlayer />
                 </div>
-                <div className='map-area'>
+                <div className='s-sec2'>
                     <div className='map-api'>
                         <Map />
                     </div>
-                    <div className='a-ma-text'>
+                    <div className='s-sec2-content'>
                         <h2 className='a-h2'>ROWELL RANCH RODEO PARK</h2>
                         <span className='a-orange-span'>
                         9725 Dublin Canyon Rd, Castro Valley, CA 94552
@@ -41,10 +41,11 @@ export default function Splash({ user, setUser, scheduledEvents }) {
                         </p>
                     </div>
                 </div>
-                <div className='a-events'>
+                <div className='s-sec3'>
                     <Schedule scheduledEvents={scheduledEvents} />
+                    <Carousel scheduledEvents={scheduledEvents} />
                 </div>
             </section>
-        </section>
+        </>
     );
 }

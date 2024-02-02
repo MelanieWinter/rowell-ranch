@@ -1,12 +1,10 @@
 .VideoPlayer {
-    margin-top: -3rem;
     margin-left: auto;
-    padding-inline: 4rem;
-    width: fit-content;
+    width: 34rem;
     box-shadow: var(--shadow);
 }
 
 .VideoPlayer .iframe {
     aspect-ratio: 16/9;
-    width: 32rem;
+    width: 100%;
 }

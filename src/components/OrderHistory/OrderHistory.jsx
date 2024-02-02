@@ -16,7 +16,7 @@ export default function OrderHistory() {
             }
         }
         getOrders();
-    }, []);
+    }, [])
 
     return (
         <div className='OrderHistory'>
@@ -28,7 +28,6 @@ export default function OrderHistory() {
                             {new Date(order.createdAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}
                         </span>
                         <span className="oh-num">
-                            {/* Order {index + 1} */}
                             Order # {order._id}
                         </span>
                     </p>

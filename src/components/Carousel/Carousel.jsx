@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import ReadMoreButton from '../ReadMoreButton/ReadMoreButton';
-import './NumberCarousel.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import './Carousel.css'
 
 const carouselTexts = [
     {
@@ -23,14 +23,19 @@ const carouselTexts = [
     },
 ];
 
-export default function NumberCarousel() {
+export default function Carousel() {
     const [activeItem, setActiveItem] = useState(0);
-    const handleItemClick = (index) => {
-        setActiveItem(index);
+
+    const handlePrevClick = () => {
+        setActiveItem((prevItem) => (prevItem - 1 + carouselTexts.length) % carouselTexts.length);
+    };
+
+    const handleNextClick = () => {
+        setActiveItem((prevItem) => (prevItem + 1) % carouselTexts.length);
     };
 
     return (
-        <main className='NumberCarousel'>
+        <div className='Carousel'>
             <div className='nc-content'>
                 <h2 className='nc-h2'>{carouselTexts[activeItem].header}</h2>
                 <p className='nc-p'>{carouselTexts[activeItem].text}</p>
@@ -38,17 +43,14 @@ export default function NumberCarousel() {
                     <ReadMoreButton href='#' style='read-more-light' content='Read More' />
                 </p>
             </div>
-            <ul>
-                {Array.from({ length: 4 }, (_, index) => (
-                <li
-                    key={index}
-                    className={index === activeItem ? 'nc-active' : ''}
-                    onClick={() => handleItemClick(index)}
-                >
-                    {`0${index + 1}`}
-                </li>
-                ))}
-            </ul>
-        </main>
+            <div className='c-buttons'>
+                <button onClick={handlePrevClick} className='c-b-btn'>
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                </button>
+                <button onClick={handleNextClick} className='c-b-btn'>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                </button>
+            </div>
+        </div>
     );
 }

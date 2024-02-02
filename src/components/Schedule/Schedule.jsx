@@ -9,7 +9,7 @@ export default function Schedule({ scheduledEvents }) {
 
     return (
         <section className='Schedule'>
-            <h2 className='sched-h2'>Event Schedule</h2>
+            <h2 className='sched-h2'>2024 Event Schedule</h2>
             <div className='sched-h2-line'></div>
             <ul className='event-list'>
                 {visibleEvents.map((event) => (
@@ -33,24 +33,6 @@ export default function Schedule({ scheduledEvents }) {
                     </button>
                 )
             )}
-
-            {/* <div>
-                <form action="">
-                    <label htmlFor="">Title</label>
-                    <input type="text" />
-                    <label htmlFor="">Date</label>
-                    <input type="text" />
-                    <label htmlFor="">Price</label>
-                    <input type="text" />
-                    <label htmlFor="">Description</label>
-                    <input type="text" />
-                    <label htmlFor="">Is this a recurring event?</label>
-                    <input type="checkbox" />
-                </form>
-            </div> */}
-
         </section>
     );
 }
-
-// TODO: Change event schedule view to more of a table so easily see all information on first glance. Like an excel form. with delete button and a form to add new events.

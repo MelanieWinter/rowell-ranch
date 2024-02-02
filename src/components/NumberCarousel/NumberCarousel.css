@@ -1,18 +1,12 @@
-/* fix gap so numbers don't run into text on small screens */
-/* make hover and focus stuff for read more and numbers */
-/* add dark class to carousel content elements */
-
 .NumberCarousel {
-    margin: 0 auto;
-    width: 100%;
-    height: 28rem;
-    padding-inline: 4rem;
+    width: 40rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;    
+    justify-content: space-between;
+    margin-right: auto;
 }
 
-.NumberCarousel .carousel-content {
+.NumberCarousel .nc-content {
     min-width: 25rem;
     max-width: 25rem;
     height: max-content;
@@ -22,13 +16,14 @@
     justify-content: center;
 }
 
-.NumberCarousel .carousel-content > h2 {
+.NumberCarousel .nc-h2 {
     font-size: 2.1rem;
     font-weight: 700;
     text-shadow: var(--shadow);
+    text-wrap: balance;
 }
 
-.NumberCarousel .carousel-content > .p {
+.NumberCarousel .nc-p {
     min-width: 95%;
     max-width: 95%;
     text-wrap: pretty;
@@ -43,17 +38,6 @@
     position: relative;
     z-index: 200;
     text-shadow: var(--shadow);
-}
-
-.NumberCarousel .read-more-link > .nc-a::after {
-    content: '';
-    border-bottom: 3px solid var(--orange-500);
-    position: absolute;
-    bottom: 3px;
-    left: 3rem; 
-    width: 5rem;
-    z-index: -100;
-    text-shadow: var(--shadow);
 } */
 
 .NumberCarousel ul {
@@ -66,7 +50,7 @@
     gap: 1rem;
     width: 15rem;
     transition: color 600ms;
-    margin-right: -6rem;
+    padding: 1rem;
 }
 
 .NumberCarousel ul li {
@@ -77,28 +61,13 @@
     transition: scale 600ms, color 600ms, margin 600ms;
 }
 
+.NumberCarousel ul li:hover {
+    color: var(--grey-000);
+}
+
 .NumberCarousel .nc-active {
     color: var(--grey-000);
     scale: 3; 
     margin-inline: 1.5rem;
     transition: scale 600ms, color 600ms, margin 600ms;
 }
-
-/* .NumberCarousel .scroll-down {
-    position: absolute;
-    z-index: 9999;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 100px;
-    font-size: 1.5rem;
-    bottom: 3rem;
-    right: -4.58rem;
-    background-color: transparent;
-    border: 1px solid var(--orange-700);
-    color: var(--orange-700);
-}
-
-.NumberCarousel .scroll-down:hover {
-    border: 1px solid var(--orange-400);
-    color: var(--orange-400);
-} */

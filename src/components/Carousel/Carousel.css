@@ -1,0 +1,59 @@
+.Carousel {
+    border: 1px solid green;
+    width: 20rem;
+    height: fit-content;
+}
+
+@media screen and (max-width: 1200px) {
+    .Carousel{
+        width: 35rem;
+    }
+}
+
+.Carousel .nc-content {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.Carousel .nc-h2 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-shadow: var(--shadow);
+    text-wrap: balance;
+}
+
+.Carousel .nc-p {
+    min-width: 95%;
+    max-width: 95%;
+    text-wrap: pretty;
+    font-size: 1rem;
+    color: var(--grey-400);
+    text-shadow: var(--shadow);
+}
+
+.Carousel .c-buttons {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.Carousel .c-b-btn {
+    cursor: pointer;
+    background-color: var(--orange-500);
+    border: none;
+    border-radius: 100px;
+    width: 2rem;
+    height: 2rem;
+    color: var(--grey-1000);
+    outline: 2px solid transparent;
+    transition: color 600ms, outline 600ms;
+}
+
+.Carousel .c-b-btn:hover {
+    color: var(--grey-000);
+    outline: 2px solid var(--grey-000);
+    transition: color 600ms, outline 600ms;
+}

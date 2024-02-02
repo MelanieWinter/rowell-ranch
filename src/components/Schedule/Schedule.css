@@ -1,12 +1,14 @@
 .Schedule {
-    padding: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    width: 30rem;
 }
 
 .Schedule .sched-h2 {
     color: var(--orange-500);
     text-shadow: var(--shadow);
     font-weight: 700;
-    font-size: 2.1rem;
+    font-size: 2rem;
 }
 
 .Schedule .sched-h2-line {
@@ -17,22 +19,18 @@
 }
 
 .Schedule .event-list {
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
 .Schedule .event-item {
-
     width: min-content;
     list-style: none;
-    /* border: 1px solid var(--grey-500); */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
-
     padding-block: .5rem;
     font-size: .95rem;
     transition: width 1500ms ease-out, color 600ms linear;
@@ -88,41 +86,8 @@
     width: min-content;
 }
 
-/* .Schedule .sched-read-more {
-    cursor: pointer;
-    font-weight: 700;
-    color: var(--grey-000);
-    position: relative;
-    z-index: 200;
-    text-shadow: var(--shadow);
-    background-color: transparent;
-    border: none;
-    font-size: 1rem;
-    margin-top: 2rem;
-    text-transform: uppercase;
-    transition: border-bottom 400ms ease-in, color 400ms ease-in;
+@media screen and (max-width: 1200px) {
+    .Schedule .ei-description {
+        width: max-content;
+    }
 }
-
-
-.Schedule .sched-read-more::after {
-    content: '';
-    border-bottom: 2px solid var(--orange-500);
-    position: absolute;
-    bottom: 3px;
-    left: 3rem; 
-    width: 3.5rem;
-    z-index: -100;
-    text-shadow: var(--shadow);
-    transition: border-bottom 400ms ease-in, width 400ms ease-in;
-}
-
-.Schdule .sched-read-more:hover {
-    color: var(--orange-500);
-    transition: color 400ms ease-in;
-}
-
-.Schedule .sched-read-more:hover::after {
-    border-bottom: 2px solid var(--orange-200);
-    width: 6rem;
-    transition: border-bottom 400ms ease-in, width 400ms ease-in;
-} */
