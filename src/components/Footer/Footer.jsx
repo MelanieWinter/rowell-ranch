@@ -12,7 +12,6 @@ export default function Footer({ user, setUser }) {
             <NavLink to="#" content="Get Involved" />
             <NavLink to="#" content="About Us" />
             <NavLink to="#" content="Sponsors" />
-            <NavLink to="/ticket-store" content="Buy Tickets" />
         </footer>
     )
 }

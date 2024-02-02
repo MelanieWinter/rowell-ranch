@@ -1,0 +1,16 @@
+.EventForm .ef-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.EventForm .ef-form > label {
+    display: flex;
+    flex-direction: column;
+}
+
+.EventForm .ef-form > label:last-of-type {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}

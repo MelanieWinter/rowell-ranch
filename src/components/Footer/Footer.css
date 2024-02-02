@@ -21,14 +21,8 @@
     box-shadow: var(--shadow);
 }
 
-.Footer > *:last-child {
+/* .Footer > *:last-child {
     margin-left: auto;
-}
-
-/* .Footer > .logo {
-    margin-right: 2rem;
-    width: 3rem;
-    height: 3rem;
 } */
 
 .Footer > a,

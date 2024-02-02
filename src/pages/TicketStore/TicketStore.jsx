@@ -50,18 +50,6 @@ export default function TicketStore({ scheduledEvents }) {
                     scheduledEvents={scheduledEvents} 
                     handleAddToOrder={handleAddToOrder}
                 />
-                {/* <ul className='ts-events'>
-                    {scheduledEvents.map((event) => (
-                        // <NavLink key={event._id} to="#" content={
-                            <li key={event._id} className='ts-item'>
-                                <div className='ts-date'>{new Date(event.date).toLocaleDateString('en-US', { day: 'numeric', month: 'numeric' })}</div>
-                                <div className='ts-title'>{event.title}</div>
-                                <div className='ts-description'>{event.description}</div>
-                                <div className='ts-price'>{event.price === 0 ? 'FREE ADMISSION' : `$${event.price}`}</div>
-                            </li>
-                        // } />
-                    ))}
-                </ul> */}
                 <ShoppingCart 
                     order={cart}
                     handleChangeQty={handleChangeQty}

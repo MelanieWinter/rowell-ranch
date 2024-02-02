@@ -4,7 +4,7 @@
     gap: .5rem;
     height: 0;
     overflow: hidden;
-    transition: height 1000ms ease-out;
+    transition: height 800ms ease-out;
 }
 
 .log-in:hover .SignUpForm > form,

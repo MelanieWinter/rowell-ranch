@@ -3,24 +3,8 @@
     z-index: 9999;
     padding-inline: 4rem;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 2rem;
-}
-
-.TicketStore .ts-events {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.TicketStore .ts-item {
-    cursor: pointer;
-    list-style: none;
-    border: 1px solid var(--orange-500);
-    border-radius: 15px;
-    padding: 2rem;
-}
-
-.TicketStore .ts-item:hover {
-    background-color: hsla(20, 88%, 50%, 0.5);
+    min-height: 100vh;
+    margin-bottom: 8rem;
 }

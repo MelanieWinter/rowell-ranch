@@ -1,6 +1,6 @@
 import './Hero.css';
 
-export default function Hero({ title, orangeIcon, orange, white, backgroundImage }) {
+export default function Hero({ user, title, orangeIcon, orange, white, backgroundImage }) {
     const style = {
         backgroundImage: `url(${backgroundImage})`
     };

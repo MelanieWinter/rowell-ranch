@@ -1,4 +1,4 @@
-.NavBar {
+/* .NavBar {
   display: flex;
   justify-content: flex-start;
   padding-inline: 4rem;
@@ -39,6 +39,8 @@
 }
 
 .NavBar .log-out {
+  position: absolute;
+  right: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,8 +61,76 @@
 .NavBar .log-out:hover {
   background-color: hsla(20, 88%, 50%, 0.5);
   width: 14rem;
-  height: 10rem;
+  height: 18rem;
   transition: width 600ms ease-out, height 600ms ease-out, background-color 1100ms ease-out;
 }
 
-/* logout will welcome user and have account button and logout button on dropdown */
+logout will welcome user and have account button and logout button on dropdown */
+
+.NavBar {
+  display: flex;
+  justify-content: flex-start;
+  padding-inline: 4rem;
+  padding-block: 1rem;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 9999;
+}
+
+.NavBar > *:last-child {
+  margin-left: auto;
+}
+
+.NavBar .log-in,
+.NavBar .log-out {
+  position: absolute;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  height: 3rem;
+  margin-top: -1rem;
+  margin-bottom: 3.5rem;
+  margin-right: 2rem;
+  padding-inline: 1rem;
+  cursor: pointer;
+  background-color: var(--orange-500);
+  box-shadow: var(--shadow);
+  text-shadow: var(--shadow);
+  color: var(--grey-000);
+  transition: width 1100ms ease-out, height 1100ms ease-out, background-color 1100ms ease-out;
+}
+
+.NavBar .log-in:hover,
+.NavBar .log-in.active,
+.NavBar .log-out:hover {
+  background-color: hsla(20, 88%, 50%, 0.5);
+}
+
+.NavBar .log-in:hover,
+.NavBar .log-in.active {
+  background-color: hsla(20, 88%, 50%, 0.5);
+  width: 14rem;
+  height: 30rem;
+  transition: width 1000ms ease-out, height 1000ms ease-out, background-color 1100ms ease-out;
+}
+
+.NavBar .log-out:hover {
+  background-color: hsla(20, 88%, 50%, 0.5);
+  width: 14rem;
+  height: 18rem;
+  transition: width 600ms ease-out, height 600ms ease-out, background-color 1100ms ease-out;
+}
+
+@media (max-width: 768px) {
+  .NavBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .NavBar .log-out {
+    position: relative; 
+    margin-right: 0; 
+  }
+}

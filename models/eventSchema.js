@@ -6,6 +6,7 @@ const eventSchema = new Schema({
     recurring: {type: Boolean},
     date: {type: Date},
     price: {type: Number},
+    image: {type: String}
 }, {
     timestamps: true,
 });

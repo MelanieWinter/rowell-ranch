@@ -1,6 +1,7 @@
 import './ShoppingCart.css';
 import LineItem from '../LineItem/LineItem';
 import * as stripeApi from '../../utilities/stripe.api'
+import formatCurrency from '../../utilities/formatCurrency';
 
 export default function ShoppingCart({ order, handleChangeQty, handleCheckout }) {
 
@@ -35,13 +36,12 @@ export default function ShoppingCart({ order, handleChangeQty, handleCheckout })
                         :
                         <button
                         className="btn-sm"
-                        // onClick={handleCheckout}
                         onClick={() => stripeApi.handleCheckoutButton(order.lineItems)}
                         disabled={!lineItems.length}
                         >CHECKOUT</button>
                     }
                     <span>{order.totalQty}</span>
-                    {/* <span className="right">${order.orderTotal.toFixed(2)}</span> */}
+                    <span className="right">{formatCurrency(order.orderTotal)}</span>
                     </section>
                 </>
                 :

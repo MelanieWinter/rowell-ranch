@@ -1,12 +1,13 @@
+import formatCurrency from '../../utilities/formatCurrency';
 import './LineItem.css';
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
-  console.log(lineItem.qty);
+  console.log(lineItem);
   return (
     <div className="LineItem">
       <div className="flex-ctr-ctr flex-col">
         <span className="align-ctr">{lineItem.event.title}</span>
-        <span>${lineItem.event.price.toFixed(2)}</span>
+        <span>{formatCurrency(lineItem.event.price)}</span>
       </div>
       <div className="qty" style={{ justifyContent: isPaid && 'center' }}>
         {!isPaid &&
@@ -23,7 +24,7 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
           >+</button>
         }
       </div>
-      <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
+      <div className='ext-price'>{formatCurrency(lineItem.extPrice)}</div>
     </div>
   );
 }

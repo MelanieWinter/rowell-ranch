@@ -1,8 +1,8 @@
 import * as userService from '../../utilities/users-service'
 import NavLink from '../NavLink/NavLink'
-import './LogOut.css'
+import './UserDropDown.css'
 
-export default function LogOut({ user, setUser }) {
+export default function UserDropDown({ user, setUser }) {
     function handleLogOut() {
         userService.logOut()
         setUser()
@@ -14,7 +14,8 @@ export default function LogOut({ user, setUser }) {
                 <span>Welcome {user.name}!</span>
             </div>
             <div className='lo-2'>
-                <NavLink to="#" content="Account" />
+                <NavLink to="/user-portal" content="Account" />
+                <NavLink to="/ticket-store" content="Buy Tickets" />
                 <NavLink to="#" content="Log Out" onClick={handleLogOut}/>
             </div>
         </div>

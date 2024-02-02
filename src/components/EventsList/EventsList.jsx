@@ -11,9 +11,11 @@ export default function EventsList({ scheduledEvents, handleAddToOrder}) {
     );
 
     return (
-        <section className='EventsList'>
-            {events}
-        </section>
+        <>
+            <section className='EventsList'>
+                {events}
+            </section>
+        </>
     )
 
 }
