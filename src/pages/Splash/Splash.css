@@ -160,5 +160,14 @@
         padding: 2rem;
         gap: 2rem;
     }
+
+    .Splash {
+        width: 90vw;
+    }
 }
 
+@media screen and (max-width: 600px) {
+    .Splash {
+        width: 100vw;
+    }
+}
