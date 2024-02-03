@@ -2,8 +2,20 @@
     box-shadow: var(--shadow);
 }
 
+.MapContainer {
+    width: 30rem;
+    height: 35rem;
+}
+
 @media screen and (max-width: 1200px) {
     .map {
         margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .MapContainer {
+        width: 20rem;
+        height: 25rem;
     }
 }

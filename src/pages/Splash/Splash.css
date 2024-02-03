@@ -5,20 +5,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: clamp(70%, 80vw, 98%);
+    width: 80vw;
     margin: 0 auto;
 }
 
 .Splash .s-sec1 {
     height: 100vh;
     width: 100%;
-    min-width: 550px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin: 4rem;
 }
 
 .Splash .s-sec2 {
@@ -151,14 +149,11 @@
     transition: transform 1000ms, opacity 1000ms; 
 }
 
-.img2.active {
+/* .img2.active {
     opacity: 1; 
     transform: translateX(0);
     transition: transform 1000ms, opacity 1000ms;
-}
-
-
-
+} */
 
 @media screen and (max-width: 1200px) {
     .Splash .s-sec3 {

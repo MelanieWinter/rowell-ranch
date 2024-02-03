@@ -12,9 +12,15 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .NumberCarousel{
+        width: 20rem;
+        margin: 0 auto;
+    }
+}
+
 .NumberCarousel .nc-content {
-    min-width: 25rem;
-    max-width: 25rem;
+    width: 55%;
     height: max-content;
     display: flex;
     flex-direction: column;

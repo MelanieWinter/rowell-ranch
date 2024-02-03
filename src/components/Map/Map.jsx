@@ -13,7 +13,7 @@ export default function Map() {
     return (
         <div className="map">
 
-            <MapContainer center={[37.7, -122]} zoom={9} scrollWheelZoom={false} style={{ height: '35rem', width: '30rem' }}>
+            <MapContainer center={[37.7, -122]} zoom={9} scrollWheelZoom={false} className='MapContainer'>
             <TileLayer 
                 attribution='&copy; <a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> <a href="https://www.flaticon.com/free-icons/rodeo" title="rodeo icons">Icon created by Leremy</a>'
                 url={`https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token=${accessToken}`}

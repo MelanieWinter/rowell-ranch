@@ -12,6 +12,14 @@
 @media screen and (max-width: 1200px) {
     .VideoPlayer {
         margin-top: 2rem;
-        /* margin-left: 0; */
+        margin-bottom: 4rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .VideoPlayer {
+        width: 20rem;
+        margin: 0 auto;
+        margin-bottom: 4rem;
     }
 }

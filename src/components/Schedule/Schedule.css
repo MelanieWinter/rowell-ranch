@@ -87,6 +87,16 @@
 
 @media screen and (max-width: 1200px) {
     .Schedule .ei-description {
-        width: max-content;
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Schedule {
+        width: 20rem;
+    }
+
+    .Schedule .ei-description {
+        width: 12rem;
     }
 }

@@ -44,3 +44,9 @@
     color: var(--grey-000);
     transition: padding-top 400ms ease-in, padding-bottom 400ms ease-in;
 }
+
+@media (max-width: 768px) {
+    .Footer {
+        display: none;
+    }
+}
