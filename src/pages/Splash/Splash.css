@@ -133,7 +133,6 @@
     transition: transform 1000ms, opacity 1000ms;
 }
 
-
 .img2 {
     background-image: url(../../../public/assets/cowboy-experience.jpeg);
     background-position: center;
@@ -169,6 +168,6 @@
 @media screen and (max-width: 600px) {
     .Splash {
         width: 100vw;
-        margin-top: -10rem;
+        /* margin-top: -10rem; */
     }
 }

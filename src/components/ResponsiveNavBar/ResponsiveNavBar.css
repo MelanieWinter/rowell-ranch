@@ -1,6 +1,6 @@
 .ResponsiveNavBar {
     position: fixed;
-    background-color: var(--grey-900);
+    background-color: hsla(0, 0%, 10%, 0.75);
     z-index: 99999999;
     transition: width 200ms ease;
 }
@@ -48,7 +48,7 @@
     margin-bottom: 1rem;
     text-align: center;
     color: var(--orange-500);
-    background-color: var(--grey-1000);
+    /* background-color: var(--grey-1000); */
     font-size: 1.25rem;
     letter-spacing: 0.3ch;
     width: 100%;
@@ -69,14 +69,14 @@
 }
 
 .ResponsiveNavBar .nav-link:hover {
-    background-color: var(--grey-1000);
+    background-color: hsla(0, 0%, 10%, 0.9);
     filter: grayscale(0%) opacity(1);
     transition: 600ms;
 }
 
 @media only screen and (max-width: 600px) {
     .ResponsiveNavBar {
-        bottom: 0;
+        top: 0;
         width: 100vw;
         height: 5rem;
     }
@@ -100,7 +100,7 @@
     }
 
     .ResponsiveNavBar .logo {
-        background-color: var(--grey-900);
+        background-color: none;
     }
 }
 
