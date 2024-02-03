@@ -6,19 +6,6 @@
     margin-right: auto;
 }
 
-@media screen and (max-width: 1200px) {
-    .NumberCarousel {
-        /* margin-right: 0; */
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .NumberCarousel{
-        width: 20rem;
-        margin: 0 auto;
-    }
-}
-
 .NumberCarousel .nc-content {
     width: 55%;
     height: max-content;
@@ -43,14 +30,6 @@
     color: var(--grey-400);
     text-shadow: var(--shadow);
 }
-
-/* .NumberCarousel .read-more-link > .nc-a {
-    font-weight: 700;
-    color: var(--grey-000);
-    position: relative;
-    z-index: 200;
-    text-shadow: var(--shadow);
-} */
 
 .NumberCarousel ul {
     transform: rotate(-90deg);
@@ -82,4 +61,41 @@
     scale: 3; 
     margin-inline: 1.5rem;
     transition: scale 600ms, color 600ms, margin 600ms;
+}
+
+@media screen and (max-width: 1200px) {
+    .NumberCarousel {
+        /* margin-right: 0; */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .NumberCarousel{
+        width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .NumberCarousel .nc-content {
+        width: 80%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .NumberCarousel ul {
+        transform: rotate(0deg);
+        transform-origin: 0% 0%;
+        white-space: nowrap;
+        color: var(--grey-600);
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 15rem;
+        transition: color 600ms;
+        padding: 1rem;
+    }
 }
