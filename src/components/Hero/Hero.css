@@ -86,9 +86,9 @@
 
 @media screen and (max-width: 600px) {
 
-    /* .Hero > * {
-        margin-left: 5rem;
-    } */
+    .Hero > * {
+        margin-top: -5rem;
+    }
 
     .Hero .hero-div2 {
         width: 20rem;

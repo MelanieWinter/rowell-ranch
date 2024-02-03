@@ -169,5 +169,6 @@
 @media screen and (max-width: 600px) {
     .Splash {
         width: 100vw;
+        margin-top: -10rem;
     }
 }
