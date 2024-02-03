@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import Hero from '../../components/Hero/Hero'
 import NumberCarousel from '../../components/NumberCarousel/NumberCarousel';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
@@ -10,6 +11,30 @@ import Carousel from '../../components/Carousel/Carousel';
 import './Splash.css';
 
 export default function Splash({ scheduledEvents }) {
+    const cardRefs = useRef([]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, {
+            threshold: 1,
+        });
+    
+        cardRefs.current.forEach(cardRef => {
+            observer.observe(cardRef);
+        });
+    
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
     return (
         <>
             <Hero
@@ -39,6 +64,10 @@ export default function Splash({ scheduledEvents }) {
                         <p className='a-read-more-link'>
                         <ReadMoreButton href='#' style='read-more-dark' content='Read More'/>
                         </p>
+                    </div>
+                    <div className='card-container1'>
+                        <div className='card img1' ref={el => (cardRefs.current[0] = el)} />
+                        <div className='card img2' ref={el => (cardRefs.current[1] = el)} />
                     </div>
                 </div>
                 <div className='s-sec3'>

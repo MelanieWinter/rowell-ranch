@@ -21,13 +21,6 @@
     margin: 4rem;
 }
 
-/* @media screen and (max-width: 680px) {
-    .Splash .s-sec1 {
-        border: 1px solid blue;
-    }
-
-} */
-
 .Splash .s-sec2 {
     background-color: var(--grey-000);
     min-height: 100vh;
@@ -113,9 +106,64 @@
     gap: 6rem;
 } 
 
+.card-container1 {
+    display: flex;
+    gap: 3rem;
+    /* position: absolute;
+    bottom: 45rem;
+    z-index: 99999; */
+}
+
+.img1 {
+    background-image: url(../../../public/assets/bull-bash.jpeg);
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 1/1;
+    width: 16rem;
+    position: absolute;
+    bottom: 45rem;
+    left: -8rem;
+    z-index: 99999;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1000ms, opacity 1000ms; 
+}
+
+.img1.active {
+    opacity: 1; 
+    transform: translateX(0);
+    transition: transform 1000ms, opacity 1000ms;
+}
+
+
+.img2 {
+    background-image: url(../../../public/assets/cowboy-experience.jpeg);
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 1/1;
+    width: 16rem;
+    position: absolute;
+    bottom: 42rem;
+    left: 12rem;
+    z-index: 99999;
+    opacity: 0; 
+    transform: translateX(-100%);
+    transition: transform 1000ms, opacity 1000ms; 
+}
+
+.img2.active {
+    opacity: 1; 
+    transform: translateX(0);
+    transition: transform 1000ms, opacity 1000ms;
+}
+
+
+
+
 @media screen and (max-width: 1200px) {
     .Splash .s-sec3 {
         padding: 2rem;
         gap: 2rem;
     }
 }
+

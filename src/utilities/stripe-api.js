@@ -4,6 +4,7 @@ const BASE_URL = '/api/stripe'
 export function handleCheckoutButton(lineItems) { 
     return sendRequest(`${BASE_URL}/create-checkout-session`, 'POST', { lineItems })
         .then(({ url }) => {
+            console.log('api url', url)
             window.location = url;
         })
         .catch(error => {

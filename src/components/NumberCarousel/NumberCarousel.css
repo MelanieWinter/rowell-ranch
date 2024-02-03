@@ -6,6 +6,12 @@
     margin-right: auto;
 }
 
+@media screen and (max-width: 1200px) {
+    .NumberCarousel {
+        /* margin-right: 0; */
+    }
+}
+
 .NumberCarousel .nc-content {
     min-width: 25rem;
     max-width: 25rem;

@@ -12,5 +12,6 @@
 @media screen and (max-width: 1200px) {
     .VideoPlayer {
         margin-top: 2rem;
+        /* margin-left: 0; */
     }
 }

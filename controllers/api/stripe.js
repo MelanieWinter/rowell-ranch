@@ -32,9 +32,10 @@ async function createCheckoutSession(req, res) {
         const session = await stripe.checkout.sessions.create({
             line_items: lineItems,
             mode: 'payment',
-            success_url: `${process.env.PORT}/user-portal`,
-            cancel_url: `${process.env.PORT}/user-portal`
+            success_url: process.env.NODE_ENV === 'production' ? '/user-portal' : `localhost:3000/user-portal`,
+            cancel_url: process.env.NODE_ENV === 'production' ? '/user-portal' : `localhost:3000/user-portal`
         })
+        console.log('controller url', session.url)
         res.json({ url: session.url, cart })
     } catch (err) {
         console.log('ERROR OBJECT', err)
