@@ -11,6 +11,7 @@ import AboutUs from '../AboutUs/AboutUs';
 import GetInvolved from '../GetInvolved/GetInvolved';
 import Events from '../Events/Events';
 import Sponsors from '../Sponsors/Sponsors'
+import ResponsiveNavBar from '../../components/ResponsiveNavBar/ResponsiveNavBar';
 import * as eventsAPI from '../../utilities/events-api'
 
 import './App.css';
@@ -34,7 +35,11 @@ function App() {
 
   return (
     <main className="App">
-      <NavBar user={user} setUser={setUser} />
+      {window.innerWidth < 600 ? (
+        <ResponsiveNavBar user={user} setUser={setUser} />
+      ) : (
+        <NavBar user={user} setUser={setUser} />
+      )}
       <Routes>
       <Route
           path="/admin-portal"

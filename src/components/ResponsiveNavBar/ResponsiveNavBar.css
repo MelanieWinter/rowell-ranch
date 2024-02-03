@@ -1,0 +1,124 @@
+.ResponsiveNavBar {
+    position: fixed;
+    background-color: var(--grey-900);
+    z-index: 99999999;
+    transition: width 200ms ease;
+}
+
+.ResponsiveNavBar .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.ResponsiveNavBar .nav-item {
+    width: 100%;
+}
+
+.ResponsiveNavBar .nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--grey-000);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 600ms;
+}
+
+.ResponsiveNavBar .link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.ResponsiveNavBar .nav-link svg {
+    font-size: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    color: var(--orange-500);
+}
+
+.logo {
+    margin-top: auto;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--orange-500);
+    background-color: var(--grey-1000);
+    font-size: 1.25rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo .link-text {
+    font-weight: 700;
+}
+
+.ResponsiveNavBar .Logo {
+    margin: 0 1rem;
+    transform: rotate(0deg);
+    transition: transform 600ms;
+}
+
+.ResponsiveNavBar:hover .Logo {
+    transform: rotate(-360deg);
+}
+
+.ResponsiveNavBar .nav-link:hover {
+    background-color: var(--grey-1000);
+    filter: grayscale(0%) opacity(1);
+    transition: 600ms;
+}
+
+@media only screen and (max-width: 600px) {
+    .ResponsiveNavBar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .ResponsiveNavBar .navbar-nav {
+        flex-direction: row;
+    }
+
+    .ResponsiveNavBar .nav-link {
+        justify-content: center;
+    }
+
+    .nav-item {
+        min-width: 0px;
+    }
+
+    .ResponsiveNavBar .Logo {
+        width: 2.6rem;
+        height: 2.6rem;
+        margin-bottom: .25rem;
+    }
+
+    .ResponsiveNavBar .logo {
+        background-color: var(--grey-900);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .ResponsiveNavBar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+        margin-left: -5rem;
+    }
+
+    .ResponsiveNavBar:hover {
+        width: 16rem;
+    }
+
+
+
+    .ResponsiveNavBar:hover .link-text {
+        display: block;
+    }
+}

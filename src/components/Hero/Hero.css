@@ -1,7 +1,7 @@
 /* add dark class to text elements */
 .Hero {
     height: 60vh;
-    width: 100vw;
+    /* width: 100%; */
 }
 
 .Hero .hero-div {    
@@ -85,6 +85,11 @@
 }
 
 @media screen and (max-width: 600px) {
+
+    /* .Hero > * {
+        margin-left: 5rem;
+    } */
+
     .Hero .hero-div2 {
         width: 20rem;
         margin: 0 auto;
