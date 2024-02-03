@@ -19,6 +19,7 @@ import './App.css';
 function App() {
   const [user, setUser] = useState(getUser())
   const [scheduledEvents, setScheduledEvents] = useState([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
   const navigate = useNavigate();
 
   useEffect(function() {
@@ -29,13 +30,25 @@ function App() {
       getScheduledEvents();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const isAdmin = () => {
     return user && user.admin;
   };
 
   return (
     <main className="App">
-      {window.innerWidth < 600 ? (
+      {isMobile ? (
         <ResponsiveNavBar user={user} setUser={setUser} />
       ) : (
         <NavBar user={user} setUser={setUser} />
