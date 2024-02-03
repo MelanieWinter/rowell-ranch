@@ -88,5 +88,16 @@
     .Hero .hero-div2 {
         width: 20rem;
         margin: 0 auto;
+        gap: .5rem;
+    }
+
+    .Hero .hero-div2 > .spans {
+        flex-direction: column;
+        gap: .25rem;
+        align-items: flex-start;
+    }
+
+    .Hero .hero-div2 > h1 {
+        line-height: 2.25rem;
     }
 }
