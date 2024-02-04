@@ -36,7 +36,7 @@ export default function ResponsiveNavBar({ user, setUser, props }) {
                 />
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faHandshakeAngle} />} 
-                    to="/sponsors"
+                    to="https://rowellranchrodeo.com/sponsors/"
                     title="Sponsors"
                 />
                 <NavItem 
