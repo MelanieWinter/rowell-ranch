@@ -1,0 +1,72 @@
+.DropdownMenu {
+    position: absolute;
+    top: calc(var(--nav-size) - 2px);
+    width: 260px;
+    transform: translateX(-45%);
+    background-color: var(--nav-bg);
+    border: var(--nav-border);
+    border-radius: var(--nav-br);
+    padding: 1rem;
+    overflow: hidden;
+    transition: all 600ms ease;
+}
+
+.DropdownMenu .menu-item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--nav-br);
+    transition: background-color var(--speed);
+    padding: 0.5rem;
+    font-size: .75rem;
+    gap: .5rem;
+}
+
+.DropdownMenu .menu-item:hover {
+    background-color: var(--nav-bg2);
+}
+
+.DropdownMenu .icon-right {
+    margin-left: auto;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu-primary-enter {
+    position: absolute;
+    transform: translateX(-110%);
+}
+
+.menu-primary-enter-active {
+    transform: translateX(0%);
+    transition: var(--speed) ease;
+}
+
+.menu-primary-exit {
+    position: absolute;
+}
+
+.menu-primary-exit-active {
+    transform: translateX(-110%);
+    transition: all var(--speed) ease;
+}
+
+.menu-secondary-enter {
+    /* position: absolute; */
+    transform: translateX(110%);
+}
+
+.menu-secondary-enter-active {
+    transform: translateX(0%);
+    transition: all var(--speed) ease;
+}
+
+.menu-secondary-exit {
+}
+
+.menu-secondary-exit-active {
+    transform: translateX(110%);
+    transition: all var(--speed) ease;
+}

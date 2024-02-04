@@ -1,52 +1,43 @@
+import { useState, props } from 'react'
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPeopleGroup, faCalendarDays, faHandshakeAngle, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faPeopleGroup, faCalendarDays, faHandshakeAngle, faCircleInfo, faBars, faHouse, faUser } from '@fortawesome/free-solid-svg-icons';
 import './ResponsiveNavBar.css'
+import NavItem from '../NavItem/NavItem';
+import DropdownMenu from '../DropdownMenu/DropdownMenu';
 
-export default function ResponsiveNavBar({ user, setUser }) {
+export default function ResponsiveNavBar({ user, setUser, props }) {
+
     return (
-        <>
-            <nav className='ResponsiveNavBar'>
-                <ul className='navbar-nav'>
-                    <li className='nav-item'>
-                        <Link to="/events" className='nav-link'>
-                            <FontAwesomeIcon icon={faCalendarDays} />
-                            <span className='link-text'>Events</span>
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/get-involved" className='nav-link'>
-                            <FontAwesomeIcon icon={faHandshakeAngle} />
-                            <span className='link-text'>Get Involved</span>
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/about-us" className='nav-link'>
-                            <FontAwesomeIcon icon={faCircleInfo} />
-                            <span className='link-text'>About Us</span>
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/sponsors" className='nav-link'>
-                            <FontAwesomeIcon icon={faPeopleGroup} />
-                            <span className='link-text'>Sponsors</span>
-                        </Link>
-                    </li>
-                    {/* <li className='nav-item dos'>
-                        <Link to="/" className='nav-link'>
-                            <FontAwesomeIcon icon={faPeopleGroup} />
-                            <span className='link-text'>Rowell Ranch</span>
-                        </Link>
-                    </li> */}
-                    <li className='logo'>
-                        <Link to="/" className='nav-link'>
-                            <Logo size="logo-sm" />
-                            <span className='link-text'>Rowell Ranch</span>
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-        </>
+        <nav className='ResponsiveNavBar'>
+            <ul className='navbar-nav'>
+                <NavItem 
+                    icon={<FontAwesomeIcon icon={faHouse} />} 
+                    to="/"
+                />
+                <NavItem 
+                    icon={<FontAwesomeIcon icon={faCalendarDays} />} 
+                    to="/events"
+                />
+                <NavItem 
+                    icon={<FontAwesomeIcon icon={faPeopleGroup} />} 
+                    to="/get-involved"
+                />
+                <NavItem 
+                    icon={<FontAwesomeIcon icon={faCircleInfo} />} 
+                    to="/about-us"
+                />
+                <NavItem 
+                    icon={<FontAwesomeIcon icon={faHandshakeAngle} />} 
+                    to="/sponsors"
+                />
+                <NavItem 
+                    icon={<FontAwesomeIcon icon={faUser} />} 
+                >
+                    <DropdownMenu></DropdownMenu>
+                </NavItem>
+            </ul>
+        </nav>
     )
 }

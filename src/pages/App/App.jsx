@@ -30,29 +30,14 @@ function App() {
       getScheduledEvents();
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 600);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   const isAdmin = () => {
     return user && user.admin;
   };
 
   return (
     <main className="App">
-      {isMobile ? (
-        <ResponsiveNavBar user={user} setUser={setUser} />
-      ) : (
-        <NavBar user={user} setUser={setUser} />
-      )}
+      <ResponsiveNavBar user={user} setUser={setUser} />
+
       <Routes>
       <Route
           path="/admin-portal"

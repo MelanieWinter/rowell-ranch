@@ -26,6 +26,7 @@
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.21.2",
     "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
     "serve-favicon": "^2.5.0",
     "stripe": "^14.14.0"
   },

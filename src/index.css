@@ -1,5 +1,12 @@
 :root {
   --shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  --nav-size: 55px;
+  --nav-bg: hsla(0, 0%, 10%, 0.75);
+  --nav-bg2: hsla(0, 0%, 20%, 0.75);
+  --nav-bg3: hsla(0, 0%, 25%, 0.75);
+  --nav-border: 1px solid var(--nav-bg);
+  --nav-br: 8px;
+  --speed: 600ms;
   
   --orange-100: hsl(20, 88%, 90%);
   --orange-200: hsl(20, 88%, 80%);
@@ -42,6 +49,13 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--grey-000);
 }
 
 
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
