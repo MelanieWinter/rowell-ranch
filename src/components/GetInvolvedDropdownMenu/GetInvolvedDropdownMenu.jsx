@@ -33,7 +33,7 @@ export default function GetInvolvedDropdownMenu({ menuKey, menuType }) {
     }
 
     return (
-        <div className='DropdownMenu' style={{ minHeight: menuHeight }} key={menuKey}>
+        <div className='DropdownMenu DMGetInvolved' style={{ minHeight: menuHeight }} key={menuKey}>
             <CSSTransition 
                 in={activeMenu === 'main'} 
                 unmountOnExit 

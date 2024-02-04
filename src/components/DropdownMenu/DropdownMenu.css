@@ -11,6 +11,14 @@
     transition: all 600ms ease;
 }
 
+.DropdownMenu.DMEvents {
+    transform: translateX(23%);
+}
+
+.DropdownMenu.DMGetInvolved {
+    transform: translateX(6%);
+}
+
 .DropdownMenu .menu-item {
     height: 40px;
     display: flex;
