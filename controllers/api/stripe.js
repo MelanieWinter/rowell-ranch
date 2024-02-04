@@ -32,8 +32,8 @@ async function createCheckoutSession(req, res) {
         const session = await stripe.checkout.sessions.create({
             line_items: lineItems,
             mode: 'payment',
-            success_url: process.env.NODE_ENV === 'production' ? `${process.env.PROD_REDIRECT}/user-portal` : `${process.env.DEV_REDIRECT}/user-portal`,
-            cancel_url: process.env.NODE_ENV === 'production' ? `${process.env.PROD_REDIRECT}/user-portal` : `${process.env.DEV_REDIRECT}/user-portal`
+            success_url: process.env.NODE_ENV === 'production' ? `${process.env.PROD_REDIRECT}/user-portal` : `${process.env.DEV_REDIRECT}user-portal`,
+            cancel_url: process.env.NODE_ENV === 'production' ? `${process.env.PROD_REDIRECT}/user-portal` : `${process.env.DEV_REDIRECT}user-portal`
         });
         console.log('controller url', session.url)
         res.json({ url: session.url, cart })
