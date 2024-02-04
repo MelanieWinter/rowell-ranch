@@ -45,11 +45,11 @@ function App() {
         />
         <Route
           path="/user-portal"
-          element={!isAdmin() ? <UserPortal user={user} scheduledEvents={scheduledEvents} setScheduledEvents={setScheduledEvents} /> : <Navigate to="/" />}
+          element={user && !isAdmin() ? <UserPortal user={user} scheduledEvents={scheduledEvents} setScheduledEvents={setScheduledEvents} /> : <Navigate to="/" />}
         />
         <Route
           path="/ticket-store"
-          element={!isAdmin() ? <TicketStore scheduledEvents={scheduledEvents} /> : <Navigate to="/" />}
+          element={user && !isAdmin() ? <TicketStore scheduledEvents={scheduledEvents} /> : <Navigate to="/" />}
         />
         <Route
           path="/about-us"
