@@ -1,18 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { CSSTransition } from 'react-transition-group'
-import './NavItem.css'
+import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import './NavItem.css';
 
-export default function NavItem({ to, icon, children }) {
+export default function NavItem({ to, icon, title, children }) {
     const [open, setOpen] = useState(false);
+    const navItemRef = useRef(null);
+
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+        if (navItemRef.current && !navItemRef.current.contains(event.target)) {
+            setOpen(false);
+        }
+        };
+        document.addEventListener('click', handleOutsideClick);
+        return () => {
+        document.removeEventListener('click', handleOutsideClick);
+        };
+    }, []); 
+
+    const toggleDropdown = () => {
+        setOpen(!open);
+    };
 
     return (
-        <li className='NavItem'>
-            <Link to={to} className='icon-button' onClick={() => setOpen(!open)}>
-                {icon}
-            </Link>
-            {open && children}
+        <li className='NavItem' ref={navItemRef}>
+        <Link to={to} className='icon-button' onClick={toggleDropdown} title={title}>
+            {icon}
+        </Link>
+        {open && children}
         </li>
-    )
+    );
 }

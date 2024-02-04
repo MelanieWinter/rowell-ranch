@@ -1,11 +1,10 @@
-import { useState, props } from 'react'
-import { Link } from 'react-router-dom';
-import Logo from '../Logo/Logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPeopleGroup, faCalendarDays, faHandshakeAngle, faCircleInfo, faBars, faHouse, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faPeopleGroup, faCalendarDays, faHandshakeAngle, faCircleInfo, faHouse, faUser } from '@fortawesome/free-solid-svg-icons';
 import './ResponsiveNavBar.css'
 import NavItem from '../NavItem/NavItem';
 import DropdownMenu from '../DropdownMenu/DropdownMenu';
+import EventsDropdownMenu from '../EventsDropdownMenu/EventsDropdownMenu';
+import GetInvolvedDropdownMenu from '../GetInvolvedDropdownMenu/GetInvolvedDropdownMenu'
 
 export default function ResponsiveNavBar({ user, setUser, props }) {
 
@@ -15,27 +14,35 @@ export default function ResponsiveNavBar({ user, setUser, props }) {
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faHouse} />} 
                     to="/"
+                    title="Home"
                 />
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faCalendarDays} />} 
-                    to="/events"
-                />
+                    title="Events"
+                >
+                    <EventsDropdownMenu />
+                </NavItem>
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faPeopleGroup} />} 
-                    to="/get-involved"
-                />
+                    title="Get Involved"
+                >
+                    <GetInvolvedDropdownMenu />
+                </NavItem>
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faCircleInfo} />} 
                     to="/about-us"
+                    title="About Us"
                 />
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faHandshakeAngle} />} 
                     to="/sponsors"
+                    title="Sponsors"
                 />
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faUser} />} 
+                    title="Sign In"
                 >
-                    <DropdownMenu></DropdownMenu>
+                    <DropdownMenu />
                 </NavItem>
             </ul>
         </nav>

@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group'
 import './DropdownMenu.css';
 import { useState } from 'react';
 
-export default function DropdownMenu() {
+export default function DropdownMenu({ menuKey, menuType }) {
     const [activeMenu, setActiveMenu ] = useState('main')
     const [menuHeight, setMenuHeight] = useState(null)
 
@@ -33,7 +33,7 @@ export default function DropdownMenu() {
     }
 
     return (
-        <div className='DropdownMenu' style={{ minHeight: menuHeight }}>
+        <div className='DropdownMenu' style={{ minHeight: menuHeight }} key={menuKey}>
             <CSSTransition 
                 in={activeMenu === 'main'} 
                 unmountOnExit 
@@ -78,5 +78,7 @@ export default function DropdownMenu() {
                 </div>
             </CSSTransition>
         </div>
+
+        
     );
 }
