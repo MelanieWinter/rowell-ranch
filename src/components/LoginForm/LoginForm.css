@@ -10,13 +10,13 @@
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    height: 0;
+    height: fit-content;
     overflow: hidden;
     transition: height 800ms ease-out;
 }
 
-.log-in:hover .LoginForm > form,
+/* .log-in:hover .LoginForm > form,
 .log-in.active .LoginForm > form {
     height: 20rem;
     transition: height 1000ms ease-out;
-}
+} */

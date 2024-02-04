@@ -3,7 +3,7 @@ import * as usersService from '../../utilities/users-service';
 import './LoginForm.css'
 import { Link } from 'react-router-dom';
 
-export default function LoginForm({ setUser, isActive, setIsActive, handleToggleForm }) {
+export default function LoginForm({ user, setUser, isActive, setIsActive, handleToggleForm }) {
     const [credentials, setCredentials] = useState({
         email: '',
         password: ''
@@ -32,14 +32,14 @@ export default function LoginForm({ setUser, isActive, setIsActive, handleToggle
                 <h3>Log In</h3>
                 <form autoComplete="off" onSubmit={handleSubmit}>
                     <label>Email</label>
-                    <input type="text" name="email" value={credentials.email} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+                    <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
                     <label>Password</label>
-                    <input type="password" name="password" value={credentials.password} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+                    <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
                     <button type="submit">LOG IN</button>
-                    <p>
+                    {/* <p>
                         Don't have an account?<br />Click here to 
                         <Link to="#" onClick={handleToggleForm}>Sign-Up</Link>
-                    </p>
+                    </p> */}
                     <p className="error-message">&nbsp;{error}</p>
                 </form>
             </div>

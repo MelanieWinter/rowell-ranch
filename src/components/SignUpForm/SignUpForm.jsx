@@ -3,7 +3,7 @@ import { signUp } from '../../utilities/users-service';
 import { Link } from 'react-router-dom';
 import './SignUpForm.css';
 
-export default function SignUpForm({ setUser, isActive, setIsActive, handleToggleForm }) {
+export default function SignUpForm({ user, setUser, isActive, setIsActive, handleToggleForm }) {
   const [isAdmin, setIsAdmin] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -65,13 +65,13 @@ export default function SignUpForm({ setUser, isActive, setIsActive, handleToggl
             <h3>Sign Up</h3>
             <form autoComplete="off" onSubmit={handleSubmit}>
             <label>Name</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
             <label>Email</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
             <label>Password</label>
-            <input type="password" name="password" value={formData.password} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+            <input type="password" name="password" value={formData.password} onChange={handleChange} required />
             <label>Confirm</label>
-            <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required onFocus={() => setIsActive(true)} onBlur={() => setIsActive(false)} />
+            <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
 
             <label>Is this an admin account?</label>
             <input type="checkbox" name="admin" checked={isAdmin} onChange={handleCheckbox} />
@@ -94,10 +94,10 @@ export default function SignUpForm({ setUser, isActive, setIsActive, handleToggl
                 SIGN UP
             </button>
 
-            <p>
+            {/* <p>
                 Already have an account?<br />
                 Click here to <Link to="#" onClick={handleToggleForm}>LogIn</Link>
-            </p>
+            </p> */}
             <p className="error-message">&nbsp;{formData.error}</p>
             </form>
         </div>

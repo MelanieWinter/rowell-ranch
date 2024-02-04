@@ -34,13 +34,6 @@ export default function GetInvolvedDropdownMenu({ menuKey, menuType }) {
 
     return (
         <div className='DropdownMenu DMGetInvolved' style={{ minHeight: menuHeight }} key={menuKey}>
-            <CSSTransition 
-                in={activeMenu === 'main'} 
-                unmountOnExit 
-                timeout={500}
-                classNames='menu-primary'
-                onEntered={calcHeight}
-            >
                 <div className='menu'>
                     <DropDownItem
                         leftIcon={<FontAwesomeIcon icon={faFaceSmile} />}
@@ -67,9 +60,6 @@ export default function GetInvolvedDropdownMenu({ menuKey, menuType }) {
                         Vendors
                     </DropDownItem>
                 </div>
-            </CSSTransition>
         </div>
-
-        
     );
 }

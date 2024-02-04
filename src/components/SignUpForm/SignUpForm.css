@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    height: 0;
+    height: fit-content;
     overflow: hidden;
     transition: height 800ms ease-out;
 }
 
-.log-in:hover .SignUpForm > form,
+/* .log-in:hover .SignUpForm > form,
 .log-in.active .SignUpForm > form {
     height: 25rem;
     transition: height 1000ms ease-out;
-}
+} */

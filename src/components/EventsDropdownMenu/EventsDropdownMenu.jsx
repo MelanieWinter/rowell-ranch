@@ -34,13 +34,6 @@ export default function EventsDropdownMenu({ menuKey, menuType }) {
 
     return (
         <div className='DropdownMenu DMEvents' style={{ minHeight: menuHeight }} key={menuKey}>
-            <CSSTransition 
-                in={activeMenu === 'main'} 
-                unmountOnExit 
-                timeout={500}
-                classNames='menu-primary'
-                onEntered={calcHeight}
-            >
                 <div className='menu'>
                     <DropDownItem
                         leftIcon={<FontAwesomeIcon icon={faHatCowboy} />}
@@ -91,9 +84,6 @@ export default function EventsDropdownMenu({ menuKey, menuType }) {
                         Special Partners
                     </DropDownItem>
                 </div>
-            </CSSTransition>
         </div>
-
-        
     );
 }

@@ -42,7 +42,7 @@ export default function ResponsiveNavBar({ user, setUser, props }) {
                     icon={<FontAwesomeIcon icon={faUser} />} 
                     title="Sign In"
                 >
-                    <DropdownMenu />
+                    <DropdownMenu user={user} setUser={setUser} />
                 </NavItem>
             </ul>
         </nav>
