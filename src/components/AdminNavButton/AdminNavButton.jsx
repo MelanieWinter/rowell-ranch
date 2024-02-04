@@ -2,13 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGear, faChevronRight, faChevronLeft, faUser, faPencil, faTicket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'; 
 import { CSSTransition } from 'react-transition-group'
-import './DropdownMenu.css';
+import '../DropdownMenu/DropdownMenu.css';
 import { useState } from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import * as userService from '../../utilities/users-service'
 
-export default function DropdownMenu({ menuKey, menuType, user, setUser }) {
+export default function AdminNavButton({ menuKey, menuType, user, setUser }) {
     const [activeMenu, setActiveMenu] = useState('main');
     const [menuHeight, setMenuHeight] = useState(null);
 
@@ -51,26 +51,7 @@ export default function DropdownMenu({ menuKey, menuType, user, setUser }) {
                 onEntered={calcHeight}
             >
                 <div className="menu">
-                    {user && user.admin && 
-                        <>
-                            <DropDownItem
-                                leftIcon={<FontAwesomeIcon icon={faUser} />}
-                                to="/admin-portal"
-                            >
-                                Admin Portal
-                            </DropDownItem>
-                            <Link
-                                to="#"
-                                className="menu-item"
-                                onClick={handleLogOut}
-                            >
-                                <span className="icon-button"></span>
-                                Log Out
-                                <span className="icon-right"></span>
-                            </Link>
-                        </>
-                    }
-                    {user && !user.admin &&
+                    {user ? (
                         <>
                             <DropDownItem
                             leftIcon={<FontAwesomeIcon icon={faUser} />}
@@ -85,17 +66,16 @@ export default function DropdownMenu({ menuKey, menuType, user, setUser }) {
                             Buy Tickets
                             </DropDownItem>
                             <Link
-                                to="#"
-                                className="menu-item"
-                                onClick={handleLogOut}
+                            to="#"
+                            className="menu-item"
+                            onClick={handleLogOut}
                             >
-                                <span className="icon-button"></span>
-                                Log Out
-                                <span className="icon-right"></span>
+                            <span className="icon-button"></span>
+                            Log Out
+                            <span className="icon-right"></span>
                             </Link>
                         </>
-                    }
-                    {!user &&
+                    ) : (
                         <>
                             <DropDownItem
                                 leftIcon={<FontAwesomeIcon icon={faPencil} />}
@@ -112,7 +92,7 @@ export default function DropdownMenu({ menuKey, menuType, user, setUser }) {
                                 Log In
                             </DropDownItem>
                         </>
-                    }
+                    )}
                 </div>
             </CSSTransition>
 

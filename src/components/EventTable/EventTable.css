@@ -14,7 +14,7 @@
 .EventTable {
     position: relative;
     z-index: 9999;
-    height: 100vh;
+    min-height: 100vh;
     margin-bottom: 8rem;
     /* width: clamp(70%, 80vw, 98%); */
     width: 100%;

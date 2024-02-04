@@ -84,8 +84,6 @@ export default function SignUpForm({ user, setUser, isActive, setIsActive, handl
                     name="adminAuthCode"
                     value={formData.adminAuthCode}
                     onChange={handleChange}
-                    onFocus={() => setIsActive(true)}
-                    onBlur={() => setIsActive(false)}
                 />
                 </div>
             )}
