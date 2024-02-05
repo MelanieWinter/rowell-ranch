@@ -9,6 +9,7 @@ import { useState, useRef, useEffect } from 'react';
 import {motion, useScroll, useMotionValueEvent } from "framer-motion"
 
 export default function ResponsiveNavBar({ user, setUser, props }) {
+    const [isOpen, setIsOpen] = useState(null)
     const [activeMenu, setActiveMenu] = useState('main');
     const [menuHeight, setMenuHeight] = useState(null);
     const [hidden, setHidden] = useState(false);
@@ -40,11 +41,15 @@ export default function ResponsiveNavBar({ user, setUser, props }) {
                     to="/"
                     title="Home"
                     dropdownRef={dropdownRef}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                 />
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faCalendarDays} />} 
                     title="Events"
                     dropdownRef={dropdownRef}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                 >
                     <EventsDropdownMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} menuHeight={menuHeight} setMenuHeight={setMenuHeight} dropdownRef={dropdownRef} />
                 </NavItem>
@@ -52,6 +57,8 @@ export default function ResponsiveNavBar({ user, setUser, props }) {
                     icon={<FontAwesomeIcon icon={faPeopleGroup} />} 
                     title="Get Involved"
                     dropdownRef={dropdownRef} 
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                 >
                     <GetInvolvedDropdownMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu} menuHeight={menuHeight} setMenuHeight={setMenuHeight} dropdownRef={dropdownRef} />
                 </NavItem>
@@ -60,17 +67,23 @@ export default function ResponsiveNavBar({ user, setUser, props }) {
                     to="/about-us"
                     title="About Us"
                     dropdownRef={dropdownRef} 
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                 />
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faHandshakeAngle} />} 
                     to="https://rowellranchrodeo.com/sponsors/"
                     title="Sponsors"
                     dropdownRef={dropdownRef} 
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                 />
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faUser} />} 
                     title="Sign In"
                     dropdownRef={dropdownRef} 
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                 >
                     <DropdownMenu user={user} setUser={setUser} activeMenu={activeMenu} setActiveMenu={setActiveMenu} menuHeight={menuHeight} setMenuHeight={setMenuHeight} dropdownRef={dropdownRef}  />
                 </NavItem>
