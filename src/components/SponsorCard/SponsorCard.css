@@ -9,6 +9,27 @@
     backdrop-filter: blur(3px); 
     background-color: hsla(0, 0%, 100%, 0.1);
     border-radius: 15px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.SponsorCard .sc-name {
+    text-shadow: var(--shadow);
+    font-weight: 500;
+    width: 12rem;
+    text-align: center;
+    color: var(--grey-300);
+    transition: all 300ms;
+}
+
+.SponsorCard:hover .sc-name {
+    color: var(--grey-000);
+    transition: all 300ms;
+}
+
+.SponsorCard:hover {
+    background-color: hsla(0, 0%, 100%, 0.2);
+    transition: all 300ms;
 }
 
 .SponsorCard .sc-logo {
@@ -17,4 +38,5 @@
     background-position: center;
     background-size: cover;
     overflow: hidden;
+    box-shadow: var(--shadow);
 }

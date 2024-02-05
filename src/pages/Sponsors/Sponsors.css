@@ -4,7 +4,7 @@
     min-height: 300vh;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
     width: clamp(70%, 80vw, 98%);
     margin: 0 auto;
@@ -12,7 +12,6 @@
 
 .Sponsors p {
     text-wrap: balance;
-    border: 1px solid var(--grey-900);
     width: 34rem;
     line-height: 1.5rem;
     color: var(--grey-100);
@@ -36,7 +35,7 @@
 
 .Sponsors .s-logos {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     overflow: hidden;
     justify-content: center;
     align-items: center;
