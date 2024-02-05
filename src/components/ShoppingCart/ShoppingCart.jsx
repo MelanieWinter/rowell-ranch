@@ -3,7 +3,7 @@ import LineItem from '../LineItem/LineItem';
 import * as stripeApi from '../../utilities/stripe-api'
 import formatCurrency from '../../utilities/formatCurrency'
 
-export default function ShoppingCart({ order, handleChangeQty, handleCheckout }) {
+export default function ShoppingCart({ order, handleChangeQty, handleCheckout, handleAddToOrder }) {
 
     if (!order) return (<h3>No items in shopping cart</h3>);
 
@@ -17,16 +17,16 @@ export default function ShoppingCart({ order, handleChangeQty, handleCheckout })
     );
 
     return (
-        <div className="OrderDetail">
+        <div className="ShoppingCart">
             <div className="section-heading">
                 {order.isPaid ?
                 <span>ORDER <span className="smaller">{order.orderId}</span></span>
                 :
-                <span>NEW ORDER</span>
+                <span>Shopping Cart</span>
                 }
-                <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
+                <span>{new Date(order.createdAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}</span>
             </div>
-            <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
+            <div className="line-item-container">
                 {lineItems.length ?
                 <>
                     {lineItems}

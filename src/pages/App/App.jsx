@@ -13,14 +13,29 @@ import Events from '../Events/Events';
 import Sponsors from '../Sponsors/Sponsors'
 import ResponsiveNavBar from '../../components/ResponsiveNavBar/ResponsiveNavBar';
 import * as eventsAPI from '../../utilities/events-api'
+import * as ordersAPI from '../../utilities/orders-api';
 
 import './App.css';
 
 function App() {
+  const [cart, setCart] = useState(null);
   const [user, setUser] = useState(getUser())
   const [scheduledEvents, setScheduledEvents] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
   const navigate = useNavigate();
+  
+  async function handleAddToOrder(eventId) {
+    const updatedCart = await ordersAPI.addItemToCart(eventId);
+    setCart(updatedCart);
+  }
+      
+  useEffect(function() {
+    async function getCart() {
+        const cart = await ordersAPI.getCart();
+        setCart(cart);
+    }
+    getCart();
+}, [setCart]);
 
   useEffect(function() {
       async function getScheduledEvents() {
@@ -34,9 +49,28 @@ function App() {
     return user && user.admin;
   };
 
+  async function handleChangeQty(eventId, newQty) {
+    const updatedCart = await ordersAPI.setItemQtyInCart(eventId, newQty);
+    setCart(updatedCart);
+}
+
+async function handleCheckout() {
+    await ordersAPI.checkout();
+    navigate('/orders');
+}
+
   return (
     <main className="App">
-      <ResponsiveNavBar user={user} setUser={setUser} />
+      <ResponsiveNavBar 
+        user={user} 
+        setUser={setUser} 
+        scheduledEvents={scheduledEvents} 
+        handleChangeQty={handleChangeQty}
+        handleCheckout={handleCheckout}
+        handleAddToOrder={handleAddToOrder}
+        cart={cart}
+        setCart={setCart}
+      />
 
       <Routes>
       <Route
@@ -49,7 +83,15 @@ function App() {
         />
         <Route
           path="/ticket-store"
-          element={user && !isAdmin() ? <TicketStore scheduledEvents={scheduledEvents} /> : <Navigate to="/" />}
+          element={user && !isAdmin() ? 
+          <TicketStore  
+          scheduledEvents={scheduledEvents} 
+          handleChangeQty={handleChangeQty}
+          handleCheckout={handleCheckout}
+          handleAddToOrder={handleAddToOrder}
+          cart={cart}
+          setCart={setCart}
+          /> : <Navigate to="/" />}
         />
         <Route
           path="/about-us"

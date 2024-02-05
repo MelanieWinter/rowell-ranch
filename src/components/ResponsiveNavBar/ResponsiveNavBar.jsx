@@ -8,7 +8,7 @@ import GetInvolvedDropdownMenu from '../GetInvolvedDropdownMenu/GetInvolvedDropd
 import { useState, useRef, useEffect } from 'react';
 import {motion, useScroll, useMotionValueEvent } from "framer-motion"
 
-export default function ResponsiveNavBar({ user, setUser, props }) {
+export default function ResponsiveNavBar({ user, setUser, scheduledEvents, handleChangeQty, handleCheckout, handleAddToOrder, cart, setCart }) {
     const [isOpen, setIsOpen] = useState(null)
     const [activeMenu, setActiveMenu] = useState('main');
     const [menuHeight, setMenuHeight] = useState(null);
@@ -86,7 +86,21 @@ export default function ResponsiveNavBar({ user, setUser, props }) {
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}
                 >
-                    <DropdownMenu user={user} setUser={setUser} activeMenu={activeMenu} setActiveMenu={setActiveMenu} menuHeight={menuHeight} setMenuHeight={setMenuHeight} dropdownRef={dropdownRef}  />
+                    <DropdownMenu 
+                        user={user} 
+                        setUser={setUser} 
+                        activeMenu={activeMenu} 
+                        setActiveMenu={setActiveMenu} 
+                        menuHeight={menuHeight} 
+                        setMenuHeight={setMenuHeight} 
+                        dropdownRef={dropdownRef}  
+                        scheduledEvents={scheduledEvents} 
+                        handleChangeQty={handleChangeQty}
+                        handleCheckout={handleCheckout}
+                        handleAddToOrder={handleAddToOrder}
+                        cart={cart}
+                        setCart={setCart}
+                    />
                 </NavItem>
             </ul>
         </motion.nav>

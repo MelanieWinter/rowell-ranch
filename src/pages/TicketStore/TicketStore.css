@@ -3,8 +3,14 @@
     z-index: 9999;
     padding-inline: 4rem;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: 2rem;
     min-height: 100vh;
     margin-bottom: 8rem;
+}
+
+@media screen and (max-width: 800px) {
+    .TicketStore .ts-div {
+        grid-template-columns: 1fr;
+    }
 }

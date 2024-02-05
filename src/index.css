@@ -1,5 +1,5 @@
 :root {
-  --shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
   --nav-size: 60px;
   --nav-bg: hsla(0, 0%, 10%, 0.75);
   --nav-bg2: hsla(0, 0%, 20%, 0.75);
