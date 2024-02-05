@@ -4,13 +4,10 @@ import './NavItem.css';
 
 export default function NavItem({ to, icon, title, children, onClick, dropdownRef, isOpen, setIsOpen }) {
     const [open, setOpen] = useState(false);
-    const [currentOpen, setCurrentOpen] = useState('');
-
     const navItemRef = useRef(null);
 
     const toggleDropdown = () => {
         setOpen(!open);
-        setCurrentOpen(title);
     };
 
     useEffect(() => {
@@ -24,7 +21,9 @@ export default function NavItem({ to, icon, title, children, onClick, dropdownRe
             <Link
                 to={to}
                 className='icon-button'
-                onClick={() => { toggleDropdown(); setIsOpen(title); }}
+                onClick={() => { 
+                    toggleDropdown(); 
+                    setIsOpen(title); }}
                 title={title}
             >
                 {icon}

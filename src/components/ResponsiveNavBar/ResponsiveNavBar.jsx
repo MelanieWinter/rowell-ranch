@@ -20,6 +20,7 @@ export default function ResponsiveNavBar({ user, setUser, props }) {
         const previous = scrollY.getPrevious()
         if (latest > previous && latest > 150) {
             setHidden(true)
+            setIsOpen(false)
         } else {
             setHidden(false)
         }
