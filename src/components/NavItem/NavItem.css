@@ -5,12 +5,36 @@
     justify-content: center;
 }
 
+.NavItem .hovered-title {
+    position: absolute;
+    left: 35%;
+    font-weight: 700;
+    font-size: 14px;
+    text-shadow: var(--shadow);
+    min-width: max-content;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: hsla(20, 88%, 50%, 1);
+    opacity: 0;
+}
+
+
+@media (min-width: 600px) {
+    .NavItem:hover .hovered-title,
+    .NavItem:focus .hovered-title {
+        color: hsla(20, 88%, 50%, 0.75);
+        opacity: 1;
+        transition: all 300ms;
+    }
+}
+
+
 .NavItem:first-child {
     margin-right: auto;
 }
 
 .NavItem .icon-button {
-    --button-size: calc(var(--nav-size) * 0.5);
+    --button-size: calc(var(--nav-size) * 0.6);
     width: var(--button-size);
     height: var(--button-size);
     background-color: var(--nav-bg3);
@@ -24,8 +48,8 @@
 
 .NavItem .icon-button svg {
     color: var(--grey-200);
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 }
 
 .NavItem .icon-button:hover,

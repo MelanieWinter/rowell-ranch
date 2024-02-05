@@ -8,9 +8,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import * as userService from '../../utilities/users-service'
 
-export default function DropdownMenu({ menuKey, menuType, user, setUser }) {
-    const [activeMenu, setActiveMenu] = useState('main');
-    const [menuHeight, setMenuHeight] = useState(null);
+export default function DropdownMenu({ menuKey, menuType, user, setUser, activeMenu, setActiveMenu, menuHeight, setMenuHeight, dropdownRef }) {
 
     function calcHeight(el) {
         const height = el.offsetHeight;

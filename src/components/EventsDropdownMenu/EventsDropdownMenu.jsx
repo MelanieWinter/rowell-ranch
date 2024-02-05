@@ -5,16 +5,14 @@ import { CSSTransition } from 'react-transition-group'
 import '../DropdownMenu/DropdownMenu.css';
 import { useState } from 'react';
 
-export default function EventsDropdownMenu({ menuKey, menuType }) {
-    const [activeMenu, setActiveMenu ] = useState('main')
-    const [menuHeight, setMenuHeight] = useState(null)
+export default function EventsDropdownMenu({ menuKey, menuType, activeMenu, setActiveMenu, menuHeight, setMenuHeight }) {
 
     function calcHeight(el) {
         const height = el.offsetHeight;
         setMenuHeight(height);
     }
 
-    function DropDownItem({ children, leftIcon, rightIcon, goToMenu, to }) {
+    function DropDownItem({ children, leftIcon, rightIcon, goToMenu, to, dropdownRef }) {
         return (
             <Link 
                 to={to} 

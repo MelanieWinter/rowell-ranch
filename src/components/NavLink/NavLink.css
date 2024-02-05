@@ -14,12 +14,3 @@
     color: var(--orange-500);
     transition: color 200ms;
 }
-
-/* 
-.NavBar > a,
-.NavBar .log-in {
-  font-weight: 700;
-  font-size: 14px;
-  text-shadow: var(--shadow);
-  min-width: max-content;
-} */

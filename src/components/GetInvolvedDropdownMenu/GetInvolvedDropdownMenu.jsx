@@ -3,11 +3,9 @@ import { faFaceSmile, faHandshakeAngle, faPeopleGroup, faStore } from '@fortawes
 import { Link } from 'react-router-dom'; 
 import { CSSTransition } from 'react-transition-group'
 import '../DropdownMenu/DropdownMenu.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
-export default function GetInvolvedDropdownMenu({ menuKey, menuType }) {
-    const [activeMenu, setActiveMenu ] = useState('main')
-    const [menuHeight, setMenuHeight] = useState(null)
+export default function GetInvolvedDropdownMenu({ menuKey, menuType, activeMenu, setActiveMenu, menuHeight, setMenuHeight, dropdownRef }) {
 
     function calcHeight(el) {
         const height = el.offsetHeight;

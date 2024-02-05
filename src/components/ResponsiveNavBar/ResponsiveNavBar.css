@@ -2,7 +2,7 @@
     height: var(--nav-size);
     width: 100vw;
     background-color: var(--nav-bg);
-    padding: 0 1rem;
+    padding: 0 2rem;
     border-bottom: var(--grey-800);
     position: fixed;
     top: 0;
@@ -14,5 +14,6 @@
     height: 100%;
     display: flex;
     justify-content: flex-end;
+    gap: .75rem;
 }
 
