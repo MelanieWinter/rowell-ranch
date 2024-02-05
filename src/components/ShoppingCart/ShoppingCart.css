@@ -4,7 +4,6 @@
     top: 10%;
     box-shadow: var(--shadow);
     border-radius: 15px;
-    padding: 2rem;
     backdrop-filter: blur(1px); 
     display: flex;
     flex-direction: column;

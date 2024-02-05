@@ -56,3 +56,9 @@
 .et-search > input {
     width: 100%;
 }
+
+.EventTable .et-aside {
+    position: sticky;
+    top: 0;
+    height: fit-content;
+}
