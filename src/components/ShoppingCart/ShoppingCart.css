@@ -9,6 +9,7 @@
     flex-direction: column;
     gap: 1rem;
     text-shadow: var(--shadow);
+    margin-bottom: 2rem;
 }
 
 .DropdownMenu .ShoppingCart {
