@@ -4,6 +4,7 @@
     width: 260px;
     transform: translateX(-45%);
     background-color: var(--nav-bg);
+    backdrop-filter: blur(2.5px);
     border: var(--nav-border);
     border-radius: var(--nav-br);
     padding: 1rem;

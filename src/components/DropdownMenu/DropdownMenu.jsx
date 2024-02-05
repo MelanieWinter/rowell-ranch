@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronLeft, faUser, faPencil, faTicket, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft, faUser, faPencil, faTicket, faCartShopping, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'; 
 import { CSSTransition } from 'react-transition-group'
 import './DropdownMenu.css';
@@ -64,7 +64,12 @@ export default function DropdownMenu({ menuKey, menuType, user, setUser, activeM
                                 className="menu-item"
                                 onClick={handleLogOut}
                             >
-                                <span className="icon-button"></span>
+                                <span 
+                                    className="icon-button" 
+                                    style={{ transform: 'rotate(180deg)' }}
+                                >
+                                    <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                                </span>
                                 Log Out
                                 <span className="icon-right"></span>
                             </Link>
@@ -96,7 +101,12 @@ export default function DropdownMenu({ menuKey, menuType, user, setUser, activeM
                                 className="menu-item"
                                 onClick={handleLogOut}
                             >
-                                <span className="icon-button"></span>
+                                <span 
+                                    className="icon-button" 
+                                    style={{ transform: 'rotate(180deg)' }}
+                                >
+                                    <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                                </span>
                                 Log Out
                                 <span className="icon-right"></span>
                             </Link>
@@ -159,7 +169,7 @@ export default function DropdownMenu({ menuKey, menuType, user, setUser, activeM
                 in={activeMenu === 'cart'}
                 unmountOnExit
                 timeout={500}
-                classNames="menu-secondary"
+                classNames="menu-secondary cart"
                 onEntered={calcHeight}
             >
                 <div className="menu">

@@ -2,6 +2,8 @@ import './ShoppingCart.css';
 import LineItem from '../LineItem/LineItem';
 import * as stripeApi from '../../utilities/stripe-api'
 import formatCurrency from '../../utilities/formatCurrency'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 export default function ShoppingCart({ order, handleChangeQty, handleCheckout, handleAddToOrder }) {
 
@@ -38,7 +40,9 @@ export default function ShoppingCart({ order, handleChangeQty, handleCheckout, h
                         className="btn-sm"
                         onClick={() => stripeApi.handleCheckoutButton(order.lineItems)}
                         disabled={!lineItems.length}
-                        >CHECKOUT</button>
+                        >
+                            <FontAwesomeIcon icon={faCartShopping} />
+                        </button>
                     }
                     <span>{order.totalQty}</span>
                     <span className="right">{formatCurrency(order.orderTotal)}</span>

@@ -2,6 +2,7 @@
     height: var(--nav-size);
     width: 100vw;
     background-color: var(--nav-bg);
+    backdrop-filter: blur(2.5px);
     padding: 0 2rem;
     border-bottom: var(--grey-800);
     position: fixed;

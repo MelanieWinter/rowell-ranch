@@ -73,7 +73,7 @@ export default function ResponsiveNavBar({ user, setUser, scheduledEvents, handl
                 />
                 <NavItem 
                     icon={<FontAwesomeIcon icon={faHandshakeAngle} />} 
-                    to="https://rowellranchrodeo.com/sponsors/"
+                    to="/sponsors"
                     title="Sponsors"
                     dropdownRef={dropdownRef} 
                     isOpen={isOpen}
