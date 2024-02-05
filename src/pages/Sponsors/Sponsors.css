@@ -1,10 +1,43 @@
 .Sponsors {
     position: relative;
     z-index: 9999;
-    min-height: 100vh;
+    min-height: 300vh;
     display: flex;
     flex-direction: column;
+    gap: 4rem;
     align-items: center;
     width: clamp(70%, 80vw, 98%);
     margin: 0 auto;
+}
+
+.Sponsors p {
+    text-wrap: balance;
+    border: 1px solid var(--grey-900);
+    width: 34rem;
+    line-height: 1.5rem;
+    color: var(--grey-100);
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+    backdrop-filter: blur(3px); 
+    padding: 2rem;
+}
+
+.Sponsors .s-scroll {
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    position: sticky;
+    top: 25%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sponsors .s-logos {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
